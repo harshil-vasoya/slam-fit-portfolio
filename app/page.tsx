@@ -30,6 +30,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import ServicesGrid from "../components/ServicesGrid"
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -414,7 +415,7 @@ export default function Home() {
         ref={heroRef}
         className="relative pt-16 pb-20 overflow-hidden hero-section min-h-screen flex items-center"
       >
-        <div className="absolute inset-0 bg-gradient-dark opacity-90 hero-bg parallax-bg"></div>
+        <div className="absolute inset-0  opacity-90 hero-bg parallax-bg"></div>
         <div className="absolute inset-0">
           {/* Mobile-optimized floating elements */}
           <div className="absolute top-20 left-4 md:left-20 w-20 h-20 md:w-32 md:h-32 bg-red-500/20 rounded-full floating pulse-element">
@@ -488,7 +489,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-16 sm:py-20 bg-gray-900 services-section">
+      <section ref={servicesRef} className="py-16 sm:py-20 services-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 reveal-text">Our Premium Services</h2>
@@ -571,8 +572,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Grid Section */}
+      <ServicesGrid />
+
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20 bg-black features-section">
+      <section ref={featuresRef} className="py-20 features-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -635,7 +639,7 @@ export default function Home() {
       </section>
 
       {/* Articles Section */}
-      <section ref={articlesRef} className="py-20 bg-gray-900 articles-section">
+      <section ref={articlesRef} className="py-20  articles-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4 reveal-text">Latest Fitness Articles</h2>
@@ -800,7 +804,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} className="py-20 bg-gradient-dark cta-section">
+      <section ref={ctaRef} className="py-20  cta-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="cta-content">
             <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Life?</h2>
@@ -823,7 +827,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gray-900 contact-section">
+      <section className="py-20 contact-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4 reveal-text">Get In Touch</h2>
