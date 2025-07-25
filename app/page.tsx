@@ -1,5 +1,4 @@
 "use client"
-
 import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
@@ -407,165 +406,237 @@ export default function Home() {
   }, [])
 
   return (
-    <div ref={scope} className="min-h-screen bg-background overflow-x-hidden">
+    <div
+      ref={scope}
+      className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black overflow-x-hidden relative"
+    >
+      {/* Mixed Background Effects */}
+      <div className="fixed inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.1)_1px,transparent_1px)] bg-[size:100px_100px] animate-pulse"></div>
+      </div>
+
+      {/* Mixed Floating Orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-red-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
       <Header currentPage="home" />
 
-      {/* Hero Section */}
+      {/* Hero Section - Red Theme */}
       <section
         ref={heroRef}
-        className="relative pt-16 pb-20 overflow-hidden hero-section min-h-screen flex items-center"
+        className="relative pt-24 pb-32 overflow-hidden hero-section min-h-screen flex items-center"
       >
-        <div className="absolute inset-0  opacity-90 hero-bg parallax-bg"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-gray-900/80 to-black/90 hero-bg parallax-bg"></div>
+
         <div className="absolute inset-0">
-          {/* Mobile-optimized floating elements */}
-          <div className="absolute top-20 left-4 md:left-20 w-20 h-20 md:w-32 md:h-32 bg-red-500/20 rounded-full floating pulse-element">
-            <Dumbbell className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-16 md:h-16 text-red-500" />
+          {/* Red themed floating elements */}
+          <div className="absolute top-20 left-3 md:left-20 w-24 h-24 md:w-40 md:h-40 bg-gradient-to-br from-red-500/30 to-pink-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Dumbbell className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-20 md:h-20 text-red-400" />
           </div>
-          <div className="absolute top-40 right-4 md:right-40 w-16 h-16 md:w-24 md:h-24 bg-red-600/30 rounded-full floating">
-            <Activity className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 md:w-12 md:h-12 text-red-400" />
+          <div className="absolute top-40 right-4 md:right-40 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-red-600/30 to-orange-600/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Activity className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-16 md:h-16 text-red-400" />
           </div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 md:w-16 md:h-16 bg-red-400/25 rounded-full floating pulse-element">
-            <TrendingUp className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 text-red-300" />
+          {/* <div className="absolute bottom-20 left-1/4 w-16 h-16 md:w-28 md:h-28 bg-gradient-to-br from-pink-500/30 to-red-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
+            <TrendingUp className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-14 md:h-14 text-pink-400" />
+          </div> */}
+          <div className="absolute top-1/2 right-4 md:right-20 w-18 h-18 md:w-24 md:h-24 bg-gradient-to-br from-red-500/30 to-pink-600/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Flame className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 text-red-400" />
           </div>
-          <div className="absolute top-1/2 right-4 md:right-20 w-16 h-16 md:w-20 md:h-20 bg-red-300/20 rounded-full floating">
-            <Flame className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 text-red-500" />
-          </div>
-          <div className="absolute bottom-40 right-1/3 w-10 h-10 md:w-14 md:h-14 bg-red-600/25 rounded-full floating pulse-element">
-            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 md:w-7 md:h-7 text-red-400" />
+          <div className="absolute bottom-40 right-1/3 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-red-400/30 to-pink-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 md:w-10 md:h-10 text-red-400" />
           </div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 lg:space-y-12 text-center lg:text-left max-w-2xl lg:max-w-none mx-auto lg:mx-0">
+              <div className="space-y-6">
+                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-tight">
                   <span className="hero-title block">Transform Your</span>
-                  <span className="text-gradient hero-title block bg-gradient-to-r from-red-500 via-red-400 to-red-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
+                  <span className="text-gradient hero-title block bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
                     Body & Mind
                   </span>
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto lg:mx-0 hero-subtitle">
-                  SLAM Fitness is not just a gym; it&apos;s a way of life. Experience premium fitness training with
-                  personalized programs designed for your transformation.
+                <p className="text-xl sm:text-2xl text-gray-300 hero-subtitle leading-relaxed">
+                  SLAM Fitness is not just a gym; it's a{" "}
+                  <span className="text-transparent bg-gradient-to-r from-red-400 to-red-500 bg-clip-text font-semibold">
+                    way of life
+                  </span>
+                  . Experience premium fitness training with personalized programs designed for your transformation.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 hero-buttons justify-center lg:justify-start">
-                <button className="bg-gradient-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group animated-button hover:scale-105 hover:-translate-y-1">
-                  Start Your Journey
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+
+              <div className="flex flex-col sm:flex-row gap-6 hero-buttons justify-center lg:justify-start">
+                <button className="group relative bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-800 to-red-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <span className="relative z-10">Start Your Journey</span>
+                  <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                 </button>
-                <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1">
-                  <Play className="mr-2" />
+                <button className="group border-2 border-white/30 backdrop-blur-sm text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-black transition-all duration-500 flex items-center justify-center animated-button hover:scale-110 hover:-translate-y-2">
+                  <Play className="mr-3 group-hover:scale-125 transition-transform duration-300" />
                   Watch Video
                 </button>
               </div>
-              <div className="flex items-center justify-center lg:justify-start space-x-6 lg:space-x-8 text-white hero-stats">
-                <div className="flex items-center space-x-2">
-                  <Star className="text-yellow-400 fill-current w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="font-semibold stat-number text-sm sm:text-base">4.9</span>
-                  <span className="text-gray-300 text-sm sm:text-base">(2.5k reviews)</span>
+
+              <div className="flex items-center justify-center lg:justify-start space-x-8 lg:space-x-12 text-white hero-stats">
+                <div className="flex items-center space-x-3 group cursor-pointer">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="text-yellow-400 fill-current w-5 h-5 group-hover:scale-125 transition-transform duration-300"
+                        style={{ animationDelay: `${i * 0.1}s` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold stat-number text-lg leading-none">4.9</span>
+                    <span className="text-gray-300 text-sm leading-tight">(2.5k reviews)</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Users className="text-red-500 w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="font-semibold stat-number text-sm sm:text-base">10000</span>
-                  <span className="text-gray-300 text-sm sm:text-base">members</span>
+                <div className="flex items-center space-x-3 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
+                    <Users className="text-white w-6 h-6" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold stat-number text-lg leading-none">10000</span>
+                    <span className="text-gray-300 text-sm leading-tight">members</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="relative order-first lg:order-last">
-              <div className="relative z-10">
-                <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Fitness Training"
-                  width={600}
-                  height={600}
-                  className="rounded-2xl shadow-2xl hero-image w-full h-auto"
-                />
+
+            <div className="relative order-first lg:order-last flex justify-center lg:justify-end">
+              <div className="relative z-10 group">
+                <div className="relative overflow-hidden rounded-3xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    alt="Fitness Training"
+                    width={700}
+                    height={700}
+                    className="rounded-3xl shadow-2xl hero-image w-full h-auto group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-48 h-48 md:w-72 md:h-72 bg-gradient-primary rounded-full opacity-20 pulse-element"></div>
+
+              <div className="absolute -top-8 -right-8 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-full opacity-60 pulse-element blur-3xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full opacity-40 pulse-element blur-3xl"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section ref={servicesRef} className="py-16 sm:py-20 services-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 reveal-text">Our Premium Services</h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto reveal-text">
-              Choose from our comprehensive range of fitness programs designed to meet your specific goals
+      {/* Services Section - RED THEME MAINTAINED */}
+      <section ref={servicesRef} className="py-24 sm:py-32 services-section relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <Target className="w-5 h-5 text-red-400" />
+              <span className="text-sm text-red-300 font-medium">Premium Services</span>
+            </div>
+            <h2 className="text-5xl sm:text-6xl font-black text-white mb-6 reveal-text">
+              Our Premium{" "}
+              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Services</span>
+            </h2>
+            <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
+              Choose from our comprehensive range of fitness programs designed to meet your specific goals and transform
+              your life
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Target,
                 title: "Functional Training",
                 description: "Advanced functional fitness training for real-world strength and mobility",
-                color: "bg-red-500",
-                gradient: "from-red-500 to-red-600",
+                gradient: "from-red-500 to-pink-600",
+                glowColor: "shadow-[0_0_50px_rgba(239,68,68,0.3)]",
                 href: "/services/functional-training",
               },
               {
                 icon: Zap,
                 title: "Fitness Bootcamp",
                 description: "High-intensity bootcamp sessions for maximum results in minimum time",
-                color: "bg-gray-800",
-                gradient: "from-gray-800 to-gray-900",
+                gradient: "from-orange-500 to-red-600",
+                glowColor: "shadow-[0_0_50px_rgba(249,115,22,0.3)]",
                 href: "/services/fitness-bootcamp",
               },
               {
                 icon: Award,
                 title: "Body Transformation",
                 description: "Personalized programs for complete body transformation and sculpting",
-                color: "bg-red-600",
-                gradient: "from-red-600 to-red-700",
+                gradient: "from-pink-500 to-red-600",
+                glowColor: "shadow-[0_0_50px_rgba(236,72,153,0.3)]",
                 href: "/services/body-transformation",
               },
               {
                 icon: Users,
                 title: "Weight Management",
                 description: "Specialized programs for weight loss and muscle gain with expert guidance",
-                color: "bg-gray-700",
-                gradient: "from-gray-700 to-gray-800",
+                gradient: "from-purple-500 to-pink-600",
+                glowColor: "shadow-[0_0_50px_rgba(168,85,247,0.3)]",
                 href: "/services/weight-management",
               },
             ].map((service, index) => (
               <Link
                 key={index}
                 href={service.href}
-                className="group relative bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-700 service-card overflow-hidden cursor-pointer hover:scale-105 hover:-translate-y-2 block"
+                className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 border border-gray-700/50 service-card overflow-hidden cursor-pointer hover:scale-105 hover:-translate-y-4 block"
               >
-                {/* Hover Background Effect */}
+                {/* RED THEME Hover Background Effect */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl`}
                 ></div>
 
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                {/* RED THEME Glow Effect */}
+                <div
+                  className={`absolute -inset-1 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-xl rounded-3xl`}
+                ></div>
 
                 {/* Content */}
                 <div className="relative z-10">
                   <div
-                    className={`w-12 h-12 sm:w-16 sm:h-16 ${service.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}
+                    className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg`}
                   >
-                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+                    <service.icon className="w-8 h-8 text-white group-hover:scale-125 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 group-hover:text-red-300 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-300 mb-6 group-hover:text-gray-100 transition-colors duration-300 leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="text-red-400 font-semibold hover:text-red-300 transition-colors flex items-center group animated-button text-sm sm:text-base">
+                  <div className="text-red-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
                     Learn More
-                    <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </div>
 
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[20px] border-l-transparent border-t-[20px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* RED THEME Corner Accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Floating Particles */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1 h-1 bg-white rounded-full animate-ping"
+                      style={{
+                        left: `${20 + (i * 12)}%`,
+                        top: `${20 + (i * 10)}%`,
+                        animationDelay: `${i * 0.2}s`,
+                      }}
+                    />
+                  ))}
+                </div>
               </Link>
             ))}
           </div>
@@ -575,21 +646,31 @@ export default function Home() {
       {/* Services Grid Section */}
       <ServicesGrid />
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="py-20 features-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-white reveal-text">
-                Why Choose{" "}
-                <span className="text-gradient bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                  SLAM Fitness
-                </span>
-                ?
-              </h2>
-              <p className="text-xl text-gray-300 reveal-text">
-                Experience the difference with our state-of-the-art facilities, expert trainers, and proven results.
-              </p>
+      {/* Features Section - Red Theme */}
+      <section ref={featuresRef} className="py-24 sm:py-32 features-section relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-10">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+                  <Award className="w-5 h-5 text-red-400" />
+                  <span className="text-sm text-red-300 font-medium">Why Choose Us</span>
+                </div>
+                <h2 className="text-5xl font-black text-white reveal-text mb-6">
+                  Why Choose{" "}
+                  <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
+                    SLAM Fitness
+                  </span>
+                  ?
+                </h2>
+                <p className="text-xl text-gray-300 reveal-text leading-relaxed">
+                  Experience the difference with our state-of-the-art facilities, expert trainers, and proven results
+                  that speak for themselves.
+                </p>
+              </div>
+
               <div className="space-y-6">
                 {[
                   "Premium equipment and modern facilities",
@@ -601,54 +682,84 @@ export default function Home() {
                 ].map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-4 feature-item group cursor-pointer hover:bg-gray-800/50 p-3 rounded-lg transition-all duration-300"
+                    className="flex items-center space-x-4 feature-item group cursor-pointer hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent p-4 rounded-xl transition-all duration-500"
                   >
-                    <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                      <CheckCircle className="w-4 h-4 text-white group-hover:scale-150 transition-transform duration-300" />
+                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                      <CheckCircle className="w-5 h-5 text-white group-hover:scale-150 transition-transform duration-300" />
                     </div>
-                    <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300">
+                    <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300 text-lg">
                       {feature}
                     </span>
                   </div>
                 ))}
               </div>
-              <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 animated-button hover:scale-105 hover:-translate-y-1">
-                Book Your Free Trial
+
+              <button className="group relative bg-gradient-to-r from-red-500 to-red-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10">Book Your Free Trial</span>
               </button>
             </div>
+
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4 features-image">
-                <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Gym Equipment"
-                  width={300}
-                  height={400}
-                  className="rounded-2xl shadow-lg hover:scale-105 hover:rotate-2 transition-all duration-500"
-                />
-                <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Training Session"
-                  width={300}
-                  height={400}
-                  className="rounded-2xl shadow-lg mt-8 hover:scale-105 hover:-rotate-2 transition-all duration-500"
-                />
+              <div className="grid grid-cols-2 gap-6 features-image">
+                <div className="space-y-6">
+                  <div className="relative group overflow-hidden rounded-3xl">
+                    <Image
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Gym Equipment"
+                      width={300}
+                      height={400}
+                      className="rounded-3xl shadow-lg hover:scale-110 hover:rotate-2 transition-all duration-700 w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                  </div>
+                  <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                    <div className="text-3xl font-bold text-white mb-2">500+</div>
+                    <div className="text-red-300">Success Stories</div>
+                  </div>
+                </div>
+                <div className="space-y-6 mt-12">
+                  <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                    <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                    <div className="text-purple-300">Access Available</div>
+                  </div>
+                  <div className="relative group overflow-hidden rounded-3xl">
+                    <Image
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Training Session"
+                      width={300}
+                      height={400}
+                      className="rounded-3xl shadow-lg hover:scale-110 hover:-rotate-2 transition-all duration-700 w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Articles Section */}
-      <section ref={articlesRef} className="py-20  articles-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4 reveal-text">Latest Fitness Articles</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto reveal-text">
+      {/* Articles Section - RED THEME MAINTAINED */}
+      <section ref={articlesRef} className="py-24 sm:py-32 articles-section relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <Sparkles className="w-5 h-5 text-red-400" />
+              <span className="text-sm text-red-300 font-medium">Latest Articles</span>
+            </div>
+            <h2 className="text-5xl font-black text-white mb-6 reveal-text">
+              Latest Fitness{" "}
+              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Articles</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
               Stay updated with the latest fitness tips, workout guides, and wellness advice from our expert trainers
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
                 image:
@@ -686,138 +797,116 @@ export default function Home() {
                 readTime: "6 min read",
                 featured: false,
               },
-              {
-                image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                category: "Training",
-                title: "Functional Training vs Traditional Gym Workouts",
-                excerpt:
-                  "Compare the benefits of functional training with traditional gym workouts and find out which approach suits your goals.",
-                author: "Alex Rodriguez",
-                date: "Nov 8, 2024",
-                readTime: "8 min read",
-                featured: false,
-              },
-              {
-                image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                category: "Recovery",
-                title: "The Importance of Rest Days in Your Fitness Routine",
-                excerpt:
-                  "Understand why rest days are crucial for muscle growth, injury prevention, and overall fitness progress.",
-                author: "Dr. Lisa Park",
-                date: "Nov 5, 2024",
-                readTime: "4 min read",
-                featured: false,
-              },
-              {
-                image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                category: "Transformation",
-                title: "Real Success Stories: 30-Day Transformation Challenge",
-                excerpt:
-                  "Inspiring stories from our members who completed the 30-day transformation challenge and achieved amazing results.",
-                author: "SLAM Team",
-                date: "Nov 3, 2024",
-                readTime: "10 min read",
-                featured: false,
-              },
             ].map((article, index) => (
               <article
                 key={index}
-                className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-700 article-card cursor-pointer hover:scale-105 hover:-translate-y-3"
+                className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 overflow-hidden border border-gray-700/50 article-card cursor-pointer hover:scale-105 hover:-translate-y-4"
               >
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* RED THEME Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
 
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                {/* RED THEME Glow Effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 via-transparent to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl"></div>
 
-                <div className="relative">
-                  <Image
-                    src={article.image || "/placeholder.svg"}
-                    alt={article.title}
-                    width={400}
-                    height={250}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  {article.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-primary text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:scale-110 transition-transform duration-300">
-                      Featured
+                <div className="relative z-10">
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={article.image || "/placeholder.svg"}
+                      alt={article.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {article.featured && (
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        Featured
+                      </div>
+                    )}
+                    <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm group-hover:bg-red-500 transition-colors duration-300 border border-white/20">
+                      {article.category}
                     </div>
-                  )}
-                  <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm group-hover:bg-red-500 transition-colors duration-300">
-                    {article.category}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+
+                  <div className="p-8">
+                    <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+                      <div className="flex items-center space-x-2 group-hover:text-red-400 transition-colors duration-300">
+                        <Calendar className="w-4 h-4" />
+                        <span>{article.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 group-hover:text-red-400 transition-colors duration-300">
+                        <Clock className="w-4 h-4" />
+                        <span>{article.readTime}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300 leading-tight">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-300 mb-6 line-clamp-3 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                          <User className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm text-gray-400 group-hover:text-red-400 transition-colors duration-300 font-medium">
+                          {article.author}
+                        </span>
+                      </div>
+                      <button className="text-red-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
+                        Read More
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                      </button>
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-6 relative z-10">
-                  <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
-                    <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                      <Calendar className="w-4 h-4" />
-                      <span>{article.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                      <Clock className="w-4 h-4" />
-                      <span>{article.readTime}</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors duration-300">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-gray-300 mb-4 line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
-                    {article.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <User className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors duration-300" />
-                      <span className="text-sm text-gray-400 group-hover:text-red-400 transition-colors duration-300">
-                        {article.author}
-                      </span>
-                    </div>
-                    <button className="text-red-400 font-semibold hover:text-red-300 transition-colors flex items-center group animated-button">
-                      Read More
-                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* RED THEME Corner Accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </article>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link
               href="/blog"
-              className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center mx-auto group animated-button hover:scale-105 hover:-translate-y-1 w-fit"
+              className="group relative bg-gradient-to-r from-red-500 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center mx-auto animated-button hover:scale-110 hover:-translate-y-2 w-fit overflow-hidden"
             >
-              View All Articles
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span className="relative z-10">View All Articles</span>
+              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section ref={ctaRef} className="py-20  cta-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA Section - RED THEME MAINTAINED */}
+      <section ref={ctaRef} className="py-24 sm:py-32 cta-section relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-pink-500/10 to-red-500/10"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="cta-content">
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Life?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of members who have already achieved their fitness goals with SLAM Fitness Studio.
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <Flame className="w-5 h-5 text-red-400" />
+              <span className="text-sm text-red-300 font-medium">Ready to Transform?</span>
+            </div>
+            <h2 className="text-5xl sm:text-6xl font-black text-white mb-8">
+              Ready to Transform Your{" "}
+              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Life?</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Join thousands of members who have already achieved their fitness goals with SLAM Fitness Studio. Your
+              transformation starts today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 animated-button hover:scale-105 hover:-translate-y-1">
-                Start Free Trial
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="group relative bg-gradient-to-r from-red-500 to-pink-600 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10">Start Free Trial</span>
               </button>
               <Link
                 href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 animated-button hover:scale-105 hover:-translate-y-1 inline-block"
+                className="group border-2 border-white/30 backdrop-blur-sm text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-black transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 inline-block"
               >
                 Contact Us
               </Link>
@@ -826,32 +915,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 contact-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4 reveal-text">Get In Touch</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto reveal-text">
-              Ready to start your fitness journey? Contact us today and let&apos;s discuss your goals.
+      {/* Contact Form Section - RED THEME MAINTAINED */}
+      <section className="py-24 sm:py-32 contact-section relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <Mail className="w-5 h-5 text-red-400" />
+              <span className="text-sm text-red-300 font-medium">Get In Touch</span>
+            </div>
+            <h2 className="text-5xl font-black text-white mb-6 reveal-text">
+              Get In{" "}
+              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
+              Ready to start your fitness journey? Contact us today and let's discuss your goals and create a
+              personalized plan for your success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="group relative bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-700 contact-form hover:shadow-2xl transition-all duration-500 hover:scale-105">
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-10 shadow-lg border border-gray-700/50 contact-form hover:shadow-2xl transition-all duration-700 hover:scale-105">
+              {/* RED THEME Hover Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-red-300 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-red-300 transition-colors duration-300">
                   Send us a Message
                 </h3>
-                <form className="space-y-6">
+                <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label
                         htmlFor="firstName"
-                        className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                       >
                         First Name *
                       </label>
@@ -860,14 +959,14 @@ export default function Home() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400"
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
                         placeholder="Enter your first name"
                       />
                     </div>
                     <div className="group">
                       <label
                         htmlFor="lastName"
-                        className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                       >
                         Last Name *
                       </label>
@@ -876,16 +975,15 @@ export default function Home() {
                         id="lastName"
                         name="lastName"
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400"
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
                         placeholder="Enter your last name"
                       />
                     </div>
                   </div>
-
                   <div className="group">
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                     >
                       Email Address *
                     </label>
@@ -894,15 +992,14 @@ export default function Home() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400"
+                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
                       placeholder="Enter your email address"
                     />
                   </div>
-
                   <div className="group">
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                     >
                       Phone Number
                     </label>
@@ -910,22 +1007,21 @@ export default function Home() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400"
+                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
                       placeholder="Enter your phone number"
                     />
                   </div>
-
                   <div className="group">
                     <label
                       htmlFor="service"
-                      className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                     >
                       Service Interest
                     </label>
                     <select
                       id="service"
                       name="service"
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white hover:bg-gray-600 hover:border-red-400"
+                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white hover:bg-gray-700/50 hover:border-red-400/50"
                     >
                       <option value="">Select a service</option>
                       <option value="functional-training">Functional Training</option>
@@ -936,55 +1032,54 @@ export default function Home() {
                       <option value="other">Other</option>
                     </select>
                   </div>
-
                   <div className="group">
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-red-300 transition-colors duration-300"
+                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
                     >
                       Message *
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={4}
+                      rows={5}
                       required
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 resize-none hover:bg-gray-600 hover:border-red-400"
+                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 resize-none hover:bg-gray-700/50 hover:border-red-400/50"
                       placeholder="Tell us about your fitness goals and how we can help you achieve them..."
                     ></textarea>
                   </div>
-
                   <button
                     type="submit"
-                    className="w-full bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group animated-button hover:scale-105 hover:-translate-y-1"
+                    className="group relative w-full bg-gradient-to-r from-red-500 to-pink-600 text-white px-8 py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1 overflow-hidden"
                   >
-                    Send Message
-                    <Send className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span className="relative z-10">Send Message</span>
+                    <Send className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   </button>
                 </form>
               </div>
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8 contact-info">
+            <div className="space-y-10 contact-info">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-                <p className="text-gray-300 mb-8">
+                <h3 className="text-3xl font-bold text-white mb-8">Contact Information</h3>
+                <p className="text-gray-300 mb-10 leading-relaxed text-lg">
                   Get in touch with us for any questions about our services, membership, or to schedule a free
-                  consultation.
+                  consultation. We're here to help you achieve your fitness goals.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-800/50 transition-all duration-300 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                    <MapPin className="w-6 h-6 text-white" />
+              <div className="space-y-8">
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                    <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1 group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
                       Visit Us
                     </h4>
-                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                       #18/70, Halls Road, Kilpauk,
                       <br />
                       Chennai – 600 010, India
@@ -992,15 +1087,15 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-800/50 transition-all duration-300 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                    <Phone className="w-6 h-6 text-white" />
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                    <Phone className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1 group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
                       Call Us
                     </h4>
-                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                       +91 98414 63406
                       <br />
                       +91 70944 79145
@@ -1008,15 +1103,15 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-800/50 transition-all duration-300 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                    <Mail className="w-6 h-6 text-white" />
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                    <Mail className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1 group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
                       Email Us
                     </h4>
-                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                       info@slamfitnessstudio.in
                       <br />
                       sureshs@paulsons.in
@@ -1024,23 +1119,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="group bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
-                <h4 className="font-semibold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
+            <div className="group bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-gray-700/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 cursor-pointer">
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
+              <div className="relative z-10">
+                <h4 className="font-bold text-white mb-6 text-xl group-hover:text-red-300 transition-colors duration-300">
                   Business Hours
                 </h4>
-                <div className="space-y-2 text-gray-300">
-                  <div className="flex justify-between group-hover:text-gray-200 transition-colors duration-300">
-                    <span>Monday - Friday</span>
-                    <span>6:00 AM - 10:00 PM</span>
+                <div className="space-y-4 text-gray-300">
+                  <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
+                    <span className="font-medium">Monday - Friday</span>
+                    <span className="text-red-400 font-semibold">6:00 AM - 10:00 PM</span>
                   </div>
-                  <div className="flex justify-between group-hover:text-gray-200 transition-colors duration-300">
-                    <span>Saturday</span>
-                    <span>6:00 AM - 8:00 PM</span>
+                  <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
+                    <span className="font-medium">Saturday</span>
+                    <span className="text-red-400 font-semibold">6:00 AM - 8:00 PM</span>
                   </div>
-                  <div className="flex justify-between group-hover:text-gray-200 transition-colors duration-300">
-                    <span>Sunday</span>
-                    <span>7:00 AM - 6:00 PM</span>
+                  <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2">
+                    <span className="font-medium">Sunday</span>
+                    <span className="text-red-400 font-semibold">7:00 AM - 6:00 PM</span>
                   </div>
                 </div>
               </div>

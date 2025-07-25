@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Sparkles, Star } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const services = [
   {
@@ -51,6 +52,27 @@ const services = [
 ]
 
 export default function ServicesGrid() {
+  const [particles, setParticles] = useState<Array<{
+    left: string;
+    top: string;
+    animationDelay: string;
+    animationDuration: string;
+  }>>([]);
+
+  useEffect(() => {
+    const generateParticles = () => {
+      const newParticles = [...Array(20)].map(() => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 3}s`,
+        animationDuration: `${2 + Math.random() * 3}s`,
+      }));
+      setParticles(newParticles);
+    };
+
+    generateParticles();
+  }, []);
+
   return (
     <section className="relative py-20 sm:py-32 overflow-hidden">
       {/* Animated Background */}
@@ -62,15 +84,15 @@ export default function ServicesGrid() {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.animationDelay,
+              animationDuration: particle.animationDuration,
             }}
           />
         ))}
@@ -172,10 +194,10 @@ export default function ServicesGrid() {
         <div className="text-center mt-20">
           <Link
             href="/services"
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-300 via-red-600 to-red-800 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
           >
             {/* Button Background Animation */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <span className="relative z-10">View All Services</span>
             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
