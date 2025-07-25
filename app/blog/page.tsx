@@ -1,0 +1,402 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
+import { ArrowRight, Calendar, Clock, User, Search, Tag } from "lucide-react"
+import { useGSAP } from "../../lib/useGSAP"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+
+export default function Blog() {
+  const scope = useGSAP()
+  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [searchTerm, setSearchTerm] = useState("")
+
+  const categories = ["All", "Workouts", "Nutrition", "Wellness", "Training", "Recovery", "Transformation"]
+
+  const articles = [
+    {
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Workouts",
+      title: "10 Essential Exercises for Building Core Strength",
+      excerpt:
+        "Discover the most effective core exercises that will help you build a strong foundation and improve your overall fitness performance. Learn proper form and progression techniques.",
+      author: "Sarah Johnson",
+      date: "Nov 15, 2024",
+      readTime: "5 min read",
+      featured: true,
+    },
+    {
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Nutrition",
+      title: "The Ultimate Guide to Pre-Workout Nutrition",
+      excerpt:
+        "Learn what to eat before your workout to maximize energy, performance, and recovery for better results. Complete meal timing and food recommendations included.",
+      author: "Mike Chen",
+      date: "Nov 12, 2024",
+      readTime: "7 min read",
+      featured: false,
+    },
+    {
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Wellness",
+      title: "How to Stay Motivated on Your Fitness Journey",
+      excerpt:
+        "Practical tips and strategies to maintain motivation and consistency in your fitness routine for long-term success. Overcome common obstacles and build lasting habits.",
+      author: "Emma Davis",
+      date: "Nov 10, 2024",
+      readTime: "6 min read",
+      featured: false,
+    },
+    {
+      id: 4,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Training",
+      title: "Functional Training vs Traditional Gym Workouts",
+      excerpt:
+        "Compare the benefits of functional training with traditional gym workouts and find out which approach suits your goals. Expert analysis and recommendations.",
+      author: "Alex Rodriguez",
+      date: "Nov 8, 2024",
+      readTime: "8 min read",
+      featured: false,
+    },
+    {
+      id: 5,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Recovery",
+      title: "The Importance of Rest Days in Your Fitness Routine",
+      excerpt:
+        "Understand why rest days are crucial for muscle growth, injury prevention, and overall fitness progress. Learn how to optimize your recovery periods.",
+      author: "Dr. Lisa Park",
+      date: "Nov 5, 2024",
+      readTime: "4 min read",
+      featured: false,
+    },
+    {
+      id: 6,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Transformation",
+      title: "Real Success Stories: 30-Day Transformation Challenge",
+      excerpt:
+        "Inspiring stories from our members who completed the 30-day transformation challenge and achieved amazing results. See their before and after journeys.",
+      author: "SLAM Team",
+      date: "Nov 3, 2024",
+      readTime: "10 min read",
+      featured: false,
+    },
+    {
+      id: 7,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Nutrition",
+      title: "Post-Workout Nutrition: What to Eat After Training",
+      excerpt:
+        "Maximize your workout results with proper post-exercise nutrition. Learn about the anabolic window and optimal recovery foods for muscle growth.",
+      author: "Nutritionist Priya",
+      date: "Nov 1, 2024",
+      readTime: "6 min read",
+      featured: false,
+    },
+    {
+      id: 8,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Workouts",
+      title: "HIIT vs Steady-State Cardio: Which is Better?",
+      excerpt:
+        "Explore the differences between high-intensity interval training and steady-state cardio. Find out which approach aligns with your fitness goals.",
+      author: "Trainer Raj",
+      date: "Oct 28, 2024",
+      readTime: "7 min read",
+      featured: false,
+    },
+    {
+      id: 9,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      category: "Wellness",
+      title: "Mental Health Benefits of Regular Exercise",
+      excerpt:
+        "Discover how regular physical activity can improve your mental health, reduce stress, and boost overall well-being. Science-backed benefits explained.",
+      author: "Dr. Mental Health",
+      date: "Oct 25, 2024",
+      readTime: "8 min read",
+      featured: false,
+    },
+  ]
+
+  const filteredArticles = articles.filter((article) => {
+    const matchesCategory = selectedCategory === "All" || article.category === selectedCategory
+    const matchesSearch =
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.author.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
+  return (
+    <div ref={scope} className="min-h-screen bg-background overflow-x-hidden">
+      <Header currentPage="blog" />
+
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-20 overflow-hidden hero-section">
+        <div className="absolute inset-0 bg-gradient-dark opacity-90 hero-bg"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight hero-title">
+                Fitness <span className="text-gradient">Blog</span>
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto hero-subtitle">
+                Expert insights, workout tips, nutrition advice, and inspiring stories to fuel your fitness journey.
+                Stay updated with the latest in health and wellness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Search and Filter Section */}
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            {/* Search Bar */}
+            <div className="relative flex-1 max-w-md group">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 group-hover:text-red-400 transition-colors duration-300" />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/20"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${
+                    selectedCategory === category
+                      ? "bg-gradient-primary text-white shadow-glow animate-pulse-slow"
+                      : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow-lg hover:shadow-red-500/20"
+                  }`}
+                >
+                  <Tag className="w-4 h-4 inline mr-1" />
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Article */}
+      {filteredArticles.find((article) => article.featured) && (
+        <section className="py-12 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-4 reveal-text">Featured Article</h2>
+            </div>
+
+            {(() => {
+              const featuredArticle = filteredArticles.find((article) => article.featured)
+              if (!featuredArticle) return null
+
+              return (
+                <div className="bg-gray-800 rounded-2xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 article-card group cursor-pointer hover:scale-105">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={featuredArticle.image || "/placeholder.svg"}
+                        alt={featuredArticle.title}
+                        width={600}
+                        height={400}
+                        className="w-full h-64 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 left-4 bg-gradient-primary text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:animate-bounce">
+                        Featured
+                      </div>
+                      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm group-hover:bg-red-500 transition-colors duration-300">
+                        {featuredArticle.category}
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+
+                    <div className="p-8 flex flex-col justify-center relative">
+                      <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
+                          <Calendar className="w-4 h-4 group-hover:animate-pulse" />
+                          <span>{featuredArticle.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
+                          <Clock className="w-4 h-4 group-hover:animate-pulse" />
+                          <span>{featuredArticle.readTime}</span>
+                        </div>
+                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
+                          <User className="w-4 h-4 group-hover:animate-pulse" />
+                          <span>{featuredArticle.author}</span>
+                        </div>
+                      </div>
+
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
+                        {featuredArticle.title}
+                      </h3>
+
+                      <p className="text-gray-300 mb-6 text-lg leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                        {featuredArticle.excerpt}
+                      </p>
+
+                      <button className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 flex items-center group w-fit hover:scale-105 hover:-translate-y-1">
+                        Read Full Article
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                      </button>
+
+                      <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })()}
+          </div>
+        </section>
+      )}
+
+      {/* Articles Grid */}
+      <section className="py-20 bg-gray-900 articles-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4 reveal-text">
+              {selectedCategory === "All" ? "All Articles" : `${selectedCategory} Articles`}
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto reveal-text">
+              {filteredArticles.length} article{filteredArticles.length !== 1 ? "s" : ""} found
+            </p>
+          </div>
+
+          {filteredArticles.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">No articles found matching your criteria.</p>
+              <button
+                onClick={() => {
+                  setSelectedCategory("All")
+                  setSearchTerm("")
+                }}
+                className="mt-4 bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300"
+              >
+                Clear Filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles
+                .filter((article) => !article.featured)
+                .map((article, index) => (
+                  <article
+                    key={article.id}
+                    className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 overflow-hidden border border-gray-700 article-card cursor-pointer hover:scale-105 hover:-translate-y-3"
+                  >
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={article.image || "/placeholder.svg"}
+                        alt={article.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm group-hover:bg-red-500 group-hover:animate-pulse transition-all duration-300">
+                        {article.category}
+                      </div>
+                      <div className="absolute top-4 left-4 w-2 h-2 bg-red-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-300"></div>
+                    </div>
+
+                    <div className="p-6 relative z-10">
+                      <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
+                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
+                          <Calendar className="w-4 h-4 group-hover:animate-pulse" />
+                          <span>{article.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
+                          <Clock className="w-4 h-4 group-hover:animate-pulse" />
+                          <span>{article.readTime}</span>
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors duration-300">
+                        {article.title}
+                      </h3>
+
+                      <p className="text-gray-300 mb-4 line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
+                        {article.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <User className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors duration-300" />
+                          <span className="text-sm text-gray-400 group-hover:text-red-400 transition-colors duration-300">
+                            {article.author}
+                          </span>
+                        </div>
+                        <button className="text-red-400 font-semibold hover:text-red-300 transition-colors flex items-center group animated-button">
+                          Read More
+                          <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </article>
+                ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-800 rounded-2xl p-8 lg:p-12 text-center border border-gray-700 hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 group hover:scale-105">
+            <h2 className="text-3xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
+              Stay Updated
+            </h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto group-hover:text-gray-100 transition-colors duration-300">
+              Subscribe to our newsletter and never miss the latest fitness tips, workout guides, and wellness advice
+              from our expert trainers.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/20"
+              />
+              <button className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 whitespace-nowrap hover:scale-105 hover:-translate-y-1">
+                Subscribe
+              </button>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}
