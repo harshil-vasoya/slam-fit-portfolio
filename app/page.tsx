@@ -939,7 +939,7 @@ export default function Home() {
             {/* Contact Form */}
             <div className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-10 shadow-lg border border-gray-700/50 contact-form hover:shadow-2xl transition-all duration-700 hover:scale-105">
               {/* RED THEME Hover Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
 
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-red-300 transition-colors duration-300">

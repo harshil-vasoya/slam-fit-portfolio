@@ -1,9 +1,7 @@
 "use client"
-
 import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
-import { ArrowRight, Calendar, Clock, User, Search, Tag } from "lucide-react"
+import { ArrowRight, Calendar, Clock, User, Search, Tag, Heart, Star, BookOpen } from "lucide-react"
 import { useGSAP } from "../../lib/useGSAP"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
@@ -145,40 +143,74 @@ export default function Blog() {
   })
 
   return (
-    <div ref={scope} className="min-h-screen bg-background overflow-x-hidden">
+    <div
+      ref={scope}
+      className="min-h-screen  overflow-x-hidden relative"
+    >
+      {/* Subtle Background Effects */}
+      <div className="fixed inset-0 opacity-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.1)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+      </div>
+
+      {/* Minimal Floating Orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-orange-500/8 to-red-500/8 rounded-full blur-3xl"></div>
+      </div>
+
       <Header currentPage="blog" />
 
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-20 overflow-hidden hero-section">
-        <div className="absolute inset-0 bg-gradient-dark opacity-90 hero-bg"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Clean Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight hero-title">
-                Fitness <span className="text-gradient">Blog</span>
-              </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto hero-subtitle">
-                Expert insights, workout tips, nutrition advice, and inspiring stories to fuel your fitness journey.
-                Stay updated with the latest in health and wellness.
-              </p>
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <BookOpen className="w-5 h-5 text-red-400" />
+              <span className="text-red-300 font-medium">Fitness Blog</span>
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight hero-title">
+              Fitness{" "}
+              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Blog</span>
+            </h1>
+
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto hero-subtitle leading-relaxed">
+              Expert insights, workout tips, nutrition advice, and inspiring stories to fuel your fitness journey. Stay
+              updated with the latest in health and wellness.
+            </p>
+
+            <div className="flex items-center justify-center space-x-8 text-gray-400 hero-stats">
+              <div className="flex items-center space-x-2">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400 fill-current w-4 h-4" />
+                  ))}
+                </div>
+                <span className="text-sm">Expert Content</span>
+              </div>
+              <div className="w-1 h-4 bg-gray-600"></div>
+              <div className="flex items-center space-x-2">
+                <BookOpen className="w-4 h-4 text-red-400" />
+                <span className="text-sm">{articles.length} Articles</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-12 bg-gray-900">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             {/* Search Bar */}
-            <div className="relative flex-1 max-w-md group">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 group-hover:text-red-400 transition-colors duration-300" />
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/20"
+                className="w-full pl-10 pr-4 py-3 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400"
               />
             </div>
 
@@ -188,10 +220,10 @@ export default function Blog() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-gradient-primary text-white shadow-glow animate-pulse-slow"
-                      : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow-lg hover:shadow-red-500/20"
+                      ? "bg-gradient-to-r from-red-500 to-pink-600 text-white"
+                      : "bg-gray-900/50 text-gray-300 hover:bg-gray-800/50 hover:text-white border border-gray-700/50"
                   }`}
                 >
                   <Tag className="w-4 h-4 inline mr-1" />
@@ -205,18 +237,16 @@ export default function Blog() {
 
       {/* Featured Article */}
       {filteredArticles.find((article) => article.featured) && (
-        <section className="py-12 bg-black">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4 reveal-text">Featured Article</h2>
             </div>
-
             {(() => {
               const featuredArticle = filteredArticles.find((article) => article.featured)
               if (!featuredArticle) return null
-
               return (
-                <div className="bg-gray-800 rounded-2xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 article-card group cursor-pointer hover:scale-105">
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 overflow-hidden hover:bg-gray-800/50 transition-all duration-300 article-card group">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                     <div className="relative overflow-hidden">
                       <Image
@@ -224,47 +254,38 @@ export default function Blog() {
                         alt={featuredArticle.title}
                         width={600}
                         height={400}
-                        className="w-full h-64 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 left-4 bg-gradient-primary text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:animate-bounce">
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         Featured
                       </div>
-                      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm group-hover:bg-red-500 transition-colors duration-300">
+                      <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm border border-white/20">
                         {featuredArticle.category}
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-
-                    <div className="p-8 flex flex-col justify-center relative">
+                    <div className="p-8 flex flex-col justify-center">
                       <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
-                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                          <Calendar className="w-4 h-4 group-hover:animate-pulse" />
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="w-4 h-4" />
                           <span>{featuredArticle.date}</span>
                         </div>
-                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                          <Clock className="w-4 h-4 group-hover:animate-pulse" />
+                        <div className="flex items-center space-x-1">
+                          <Clock className="w-4 h-4" />
                           <span>{featuredArticle.readTime}</span>
                         </div>
-                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                          <User className="w-4 h-4 group-hover:animate-pulse" />
+                        <div className="flex items-center space-x-1">
+                          <User className="w-4 h-4" />
                           <span>{featuredArticle.author}</span>
                         </div>
                       </div>
-
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-red-400 transition-colors duration-300">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
                         {featuredArticle.title}
                       </h3>
-
-                      <p className="text-gray-300 mb-6 text-lg leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        {featuredArticle.excerpt}
-                      </p>
-
-                      <button className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 flex items-center group w-fit hover:scale-105 hover:-translate-y-1">
+                      <p className="text-gray-300 mb-6 text-lg leading-relaxed">{featuredArticle.excerpt}</p>
+                      <button className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300 flex items-center w-fit">
                         Read Full Article
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                        <ArrowRight className="ml-2 w-4 h-4" />
                       </button>
-
-                      <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                   </div>
                 </div>
@@ -275,7 +296,7 @@ export default function Blog() {
       )}
 
       {/* Articles Grid */}
-      <section className="py-20 bg-gray-900 articles-section">
+      <section className="py-20 articles-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4 reveal-text">
@@ -288,13 +309,13 @@ export default function Blog() {
 
           {filteredArticles.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No articles found matching your criteria.</p>
+              <p className="text-gray-400 text-lg mb-4">No articles found matching your criteria.</p>
               <button
                 onClick={() => {
                   setSelectedCategory("All")
                   setSearchTerm("")
                 }}
-                className="mt-4 bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300"
+                className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300"
               >
                 Clear Filters
               </button>
@@ -306,63 +327,47 @@ export default function Blog() {
                 .map((article, index) => (
                   <article
                     key={article.id}
-                    className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 overflow-hidden border border-gray-700 article-card cursor-pointer hover:scale-105 hover:-translate-y-3"
+                    className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 overflow-hidden hover:bg-gray-800/50 transition-all duration-300 article-card"
                   >
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-
                     <div className="relative overflow-hidden">
                       <Image
                         src={article.image || "/placeholder.svg"}
                         alt={article.title}
                         width={400}
                         height={250}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm group-hover:bg-red-500 group-hover:animate-pulse transition-all duration-300">
+                      <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm border border-white/20">
                         {article.category}
                       </div>
-                      <div className="absolute top-4 left-4 w-2 h-2 bg-red-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-300"></div>
                     </div>
 
-                    <div className="p-6 relative z-10">
+                    <div className="p-6">
                       <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
-                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                          <Calendar className="w-4 h-4 group-hover:animate-pulse" />
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="w-4 h-4" />
                           <span>{article.date}</span>
                         </div>
-                        <div className="flex items-center space-x-1 group-hover:text-red-400 transition-colors duration-300">
-                          <Clock className="w-4 h-4 group-hover:animate-pulse" />
+                        <div className="flex items-center space-x-1">
+                          <Clock className="w-4 h-4" />
                           <span>{article.readTime}</span>
                         </div>
                       </div>
-
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors duration-300">
                         {article.title}
                       </h3>
-
-                      <p className="text-gray-300 mb-4 line-clamp-3 group-hover:text-gray-200 transition-colors duration-300">
-                        {article.excerpt}
-                      </p>
-
+                      <p className="text-gray-300 mb-4 line-clamp-3">{article.excerpt}</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <User className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors duration-300" />
-                          <span className="text-sm text-gray-400 group-hover:text-red-400 transition-colors duration-300">
-                            {article.author}
-                          </span>
+                          <User className="w-4 h-4 text-gray-400" />
+                          <span className="text-sm text-gray-400">{article.author}</span>
                         </div>
-                        <button className="text-red-400 font-semibold hover:text-red-300 transition-colors flex items-center group animated-button">
+                        <button className="text-red-400 font-medium hover:text-red-300 transition-colors flex items-center">
                           Read More
-                          <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                          <ArrowRight className="ml-1 w-4 h-4" />
                         </button>
                       </div>
                     </div>
-
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </article>
                 ))}
             </div>
@@ -371,13 +376,15 @@ export default function Blog() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-800 rounded-2xl p-8 lg:p-12 text-center border border-gray-700 hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 group hover:scale-105">
-            <h2 className="text-3xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
-              Stay Updated
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto group-hover:text-gray-100 transition-colors duration-300">
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 lg:p-12 text-center border border-gray-700/50">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
+              <Heart className="w-5 h-5 text-red-400" />
+              <span className="text-red-300 font-medium">Stay Updated</span>
+            </div>
+            <h2 className="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Subscribe to our newsletter and never miss the latest fitness tips, workout guides, and wellness advice
               from our expert trainers.
             </p>
@@ -385,13 +392,12 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-600 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/20"
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400"
               />
-              <button className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 whitespace-nowrap hover:scale-105 hover:-translate-y-1">
+              <button className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300 whitespace-nowrap">
                 Subscribe
               </button>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
           </div>
         </div>
       </section>
