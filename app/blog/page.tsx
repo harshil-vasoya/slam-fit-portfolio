@@ -145,17 +145,17 @@ export default function Blog() {
   return (
     <div
       ref={scope}
-      className="min-h-screen  overflow-x-hidden relative"
+      className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black overflow-x-hidden relative"
     >
       {/* Subtle Background Effects */}
       <div className="fixed inset-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.1)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(107,114,128,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(107,114,128,0.1)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
       </div>
 
       {/* Minimal Floating Orbs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-orange-500/8 to-red-500/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-gray-500/10 to-gray-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-gray-600/8 to-gray-700/8 rounded-full blur-3xl"></div>
       </div>
 
       <Header currentPage="blog" />
@@ -164,14 +164,14 @@ export default function Blog() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <BookOpen className="w-5 h-5 text-red-400" />
-              <span className="text-red-300 font-medium">Fitness Blog</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <BookOpen className="w-5 h-5 text-gray-400" />
+              <span className="text-gray-300 font-medium">Fitness Blog</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight hero-title">
               Fitness{" "}
-              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Blog</span>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Blog</span>
             </h1>
 
             <p className="text-xl text-gray-300 max-w-3xl mx-auto hero-subtitle leading-relaxed">
@@ -190,7 +190,7 @@ export default function Blog() {
               </div>
               <div className="w-1 h-4 bg-gray-600"></div>
               <div className="flex items-center space-x-2">
-                <BookOpen className="w-4 h-4 text-red-400" />
+                <BookOpen className="w-4 h-4 text-gray-400" />
                 <span className="text-sm">{articles.length} Articles</span>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function Blog() {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400"
+                className="w-full pl-10 pr-4 py-3 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400"
               />
             </div>
 
@@ -222,7 +222,7 @@ export default function Blog() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-red-500 to-pink-600 text-white"
+                      ? "bg-gradient-to-r from-gray-500 to-gray-600 text-white"
                       : "bg-gray-900/50 text-gray-300 hover:bg-gray-800/50 hover:text-white border border-gray-700/50"
                   }`}
                 >
@@ -256,7 +256,7 @@ export default function Blog() {
                         height={400}
                         className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-gray-500 to-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         Featured
                       </div>
                       <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm border border-white/20">
@@ -278,11 +278,11 @@ export default function Blog() {
                           <span>{featuredArticle.author}</span>
                         </div>
                       </div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-gray-300 transition-colors duration-300">
                         {featuredArticle.title}
                       </h3>
                       <p className="text-gray-300 mb-6 text-lg leading-relaxed">{featuredArticle.excerpt}</p>
-                      <button className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300 flex items-center w-fit">
+                      <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-300 flex items-center w-fit">
                         Read Full Article
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </button>
@@ -315,7 +315,7 @@ export default function Blog() {
                   setSelectedCategory("All")
                   setSearchTerm("")
                 }}
-                className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300"
+                className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-300"
               >
                 Clear Filters
               </button>
@@ -353,7 +353,7 @@ export default function Blog() {
                           <span>{article.readTime}</span>
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
                         {article.title}
                       </h3>
                       <p className="text-gray-300 mb-4 line-clamp-3">{article.excerpt}</p>
@@ -362,7 +362,7 @@ export default function Blog() {
                           <User className="w-4 h-4 text-gray-400" />
                           <span className="text-sm text-gray-400">{article.author}</span>
                         </div>
-                        <button className="text-red-400 font-medium hover:text-red-300 transition-colors flex items-center">
+                        <button className="text-gray-400 font-medium hover:text-white transition-colors flex items-center">
                           Read More
                           <ArrowRight className="ml-1 w-4 h-4" />
                         </button>
@@ -379,9 +379,9 @@ export default function Blog() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 lg:p-12 text-center border border-gray-700/50">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <Heart className="w-5 h-5 text-red-400" />
-              <span className="text-red-300 font-medium">Stay Updated</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <Heart className="w-5 h-5 text-gray-400" />
+              <span className="text-gray-300 font-medium">Stay Updated</span>
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -392,9 +392,9 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400"
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400"
               />
-              <button className="bg-gradient-to-r from-red-500 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300 whitespace-nowrap">
+              <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-300 whitespace-nowrap">
                 Subscribe
               </button>
             </div>

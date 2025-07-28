@@ -410,43 +410,38 @@ export default function Home() {
       ref={scope}
       className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black overflow-x-hidden relative"
     >
-      {/* Mixed Background Effects */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.1)_1px,transparent_1px)] bg-[size:100px_100px] animate-pulse"></div>
-      </div>
-
-      {/* Mixed Floating Orbs */}
+ 
+            {/* Mixed Floating Orbs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-red-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gray-500/20 to-gray-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-gray-600/20 to-gray-700/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-gray-400/20 to-gray-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
 
       <Header currentPage="home" />
 
       {/* Hero Section - Red Theme */}
       <section
         ref={heroRef}
-        className="relative pt-24 pb-32 overflow-hidden hero-section min-h-screen flex items-center"
+        className="relative pt-24 pb-16 overflow-hidden hero-section min-h-screen flex items-center"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-gray-900/80 to-black/90 hero-bg parallax-bg"></div>
 
         <div className="absolute inset-0">
-          {/* Red themed floating elements */}
-          <div className="absolute top-20 left-3 md:left-20 w-24 h-24 md:w-40 md:h-40 bg-gradient-to-br from-red-500/30 to-pink-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
-            <Dumbbell className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-20 md:h-20 text-red-400" />
-          </div>
-          <div className="absolute top-40 right-4 md:right-40 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-red-600/30 to-orange-600/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
-            <Activity className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-16 md:h-16 text-red-400" />
+                      {/* Black & White themed floating elements */}
+          {/* <div className="absolute bottom-30 left-3 md:left-20 w-24 h-24 md:w-40 md:h-40 bg-gradient-to-br from-gray-500/30 to-gray-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Dumbbell className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-20 md:h-20 text-gray-400" />
+          </div> */}
+          <div className="absolute top-25 right-4 md:right-40 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-gray-600/30 to-gray-700/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Activity className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-16 md:h-16 text-gray-400" />
           </div>
           {/* <div className="absolute bottom-20 left-1/4 w-16 h-16 md:w-28 md:h-28 bg-gradient-to-br from-pink-500/30 to-red-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
             <TrendingUp className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-14 md:h-14 text-pink-400" />
           </div> */}
-          <div className="absolute top-1/2 right-4 md:right-20 w-18 h-18 md:w-24 md:h-24 bg-gradient-to-br from-red-500/30 to-pink-600/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
-            <Flame className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 text-red-400" />
+          <div className="absolute top-1/2 right-2 md:right-20 w-18 h-18 md:w-24 md:h-24 bg-gradient-to-br from-gray-500/30 to-gray-600/30 rounded-3xl floating backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Flame className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 text-gray-400" />
           </div>
-          <div className="absolute bottom-40 right-1/3 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-red-400/30 to-pink-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
-            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 md:w-10 md:h-10 text-red-400" />
+          <div className="absolute bottom-40 right-1/3 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-gray-400/30 to-gray-600/30 rounded-3xl floating pulse-element backdrop-blur-xl border border-white/10 shadow-2xl">
+            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 md:w-10 md:h-10 text-gray-400" />
           </div>
         </div>
 
@@ -454,15 +449,15 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="space-y-8 lg:space-y-12 text-center lg:text-left max-w-2xl lg:max-w-none mx-auto lg:mx-0">
               <div className="space-y-6">
-                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
                   <span className="hero-title block">Transform Your</span>
-                  <span className="text-gradient hero-title block bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
+                  <span className="text-gradient hero-title block bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
                     Body & Mind
                   </span>
                 </h1>
-                <p className="text-xl sm:text-2xl text-gray-300 hero-subtitle leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-300 hero-subtitle leading-relaxed">
                   SLAM Fitness is not just a gym; it's a{" "}
-                  <span className="text-transparent bg-gradient-to-r from-red-400 to-red-500 bg-clip-text font-semibold">
+                  <span className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-semibold">
                     way of life
                   </span>
                   . Experience premium fitness training with personalized programs designed for your transformation.
@@ -470,8 +465,8 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 hero-buttons justify-center lg:justify-start">
-                <button className="group relative bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-800 to-red-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <button className="group relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <span className="relative z-10">Start Your Journey</span>
                   <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                 </button>
@@ -498,7 +493,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
                     <Users className="text-white w-6 h-6" />
                   </div>
                   <div className="flex flex-col">
@@ -520,30 +515,30 @@ export default function Home() {
                     className="rounded-3xl shadow-2xl hero-image w-full h-auto group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-gray-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                 </div>
               </div>
 
-              <div className="absolute -top-8 -right-8 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-full opacity-60 pulse-element blur-3xl"></div>
-              <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full opacity-40 pulse-element blur-3xl"></div>
+              <div className="absolute -top-8 -right-8 w-64 h-64 md:w-80 md:h-80 bg-gradient-to-r from-gray-500/20 to-gray-600/20 rounded-full opacity-60 pulse-element blur-3xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 md:w-64 md:h-64 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full opacity-40 pulse-element blur-3xl"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section - RED THEME MAINTAINED */}
+      {/* Services Section - BLACK & WHITE THEME */}
       <section ref={servicesRef} className="py-24 sm:py-32 services-section relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-500/5 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <Target className="w-5 h-5 text-red-400" />
-              <span className="text-sm text-red-300 font-medium">Premium Services</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <Target className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-300 font-medium">Premium Services</span>
             </div>
             <h2 className="text-5xl sm:text-6xl font-black text-white mb-6 reveal-text">
               Our Premium{" "}
-              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Services</span>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
               Choose from our comprehensive range of fitness programs designed to meet your specific goals and transform
@@ -557,32 +552,32 @@ export default function Home() {
                 icon: Target,
                 title: "Functional Training",
                 description: "Advanced functional fitness training for real-world strength and mobility",
-                gradient: "from-red-500 to-pink-600",
-                glowColor: "shadow-[0_0_50px_rgba(239,68,68,0.3)]",
+                gradient: "from-gray-800 to-gray-900",
+                glowColor: "shadow-[0_0_50px_rgba(107,114,128,0.3)]",
                 href: "/services/functional-training",
               },
               {
                 icon: Zap,
                 title: "Fitness Bootcamp",
                 description: "High-intensity bootcamp sessions for maximum results in minimum time",
-                gradient: "from-orange-500 to-red-600",
-                glowColor: "shadow-[0_0_50px_rgba(249,115,22,0.3)]",
+                gradient: "from-gray-600 to-gray-700",
+                glowColor: "shadow-[0_0_50px_rgba(75,85,99,0.3)]",
                 href: "/services/fitness-bootcamp",
               },
               {
                 icon: Award,
                 title: "Body Transformation",
                 description: "Personalized programs for complete body transformation and sculpting",
-                gradient: "from-pink-500 to-red-600",
-                glowColor: "shadow-[0_0_50px_rgba(236,72,153,0.3)]",
+                gradient: "from-gray-700 to-gray-800",
+                glowColor: "shadow-[0_0_50px_rgba(55,65,81,0.3)]",
                 href: "/services/body-transformation",
               },
               {
                 icon: Users,
                 title: "Weight Management",
                 description: "Specialized programs for weight loss and muscle gain with expert guidance",
-                gradient: "from-purple-500 to-pink-600",
-                glowColor: "shadow-[0_0_50px_rgba(168,85,247,0.3)]",
+                gradient: "from-gray-800 to-gray-900",
+                glowColor: "shadow-[0_0_50px_rgba(31,41,55,0.3)]",
                 href: "/services/weight-management",
               },
             ].map((service, index) => (
@@ -614,14 +609,14 @@ export default function Home() {
                   <p className="text-gray-300 mb-6 group-hover:text-gray-100 transition-colors duration-300 leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="text-red-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
+                  <div className="text-gray-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </div>
 
-                {/* RED THEME Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* BLACK & WHITE THEME Corner Accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Floating Particles */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -646,21 +641,20 @@ export default function Home() {
       {/* Services Grid Section */}
       <ServicesGrid />
 
-      {/* Features Section - Red Theme */}
+      {/* Features Section - Black & White Theme */}
       <section ref={featuresRef} className="py-24 sm:py-32 features-section relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-10">
               <div>
-                <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-                  <Award className="w-5 h-5 text-red-400" />
-                  <span className="text-sm text-red-300 font-medium">Why Choose Us</span>
+                <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+                  <Award className="w-5 h-5 text-gray-400" />
+                  <span className="text-sm text-gray-300 font-medium">Why Choose Us</span>
                 </div>
                 <h2 className="text-5xl font-black text-white reveal-text mb-6">
                   Why Choose{" "}
-                  <span className="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     SLAM Fitness
                   </span>
                   ?
@@ -682,9 +676,9 @@ export default function Home() {
                 ].map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-4 feature-item group cursor-pointer hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent p-4 rounded-xl transition-all duration-500"
+                    className="flex items-center space-x-4 feature-item group cursor-pointer hover:bg-gradient-to-r hover:from-gray-500/10 hover:to-transparent p-4 rounded-xl transition-all duration-500"
                   >
-                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                    <div className="w-8 h-8 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg">
                       <CheckCircle className="w-5 h-5 text-white group-hover:scale-150 transition-transform duration-300" />
                     </div>
                     <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300 text-lg">
@@ -694,8 +688,8 @@ export default function Home() {
                 ))}
               </div>
 
-              <button className="group relative bg-gradient-to-r from-red-500 to-red-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <button className="group relative bg-gradient-to-r from-gray-500 to-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10">Book Your Free Trial</span>
               </button>
             </div>
@@ -711,17 +705,17 @@ export default function Home() {
                       height={400}
                       className="rounded-3xl shadow-lg hover:scale-110 hover:rotate-2 transition-all duration-700 w-full h-auto"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
-                  <div className="bg-gradient-to-r from-red-500/20 to-red-600/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                  <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <div className="text-3xl font-bold text-white mb-2">500+</div>
-                    <div className="text-red-300">Success Stories</div>
+                    <div className="text-gray-300">Success Stories</div>
                   </div>
                 </div>
                 <div className="space-y-6 mt-12">
-                  <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                  <div className="bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                    <div className="text-purple-300">Access Available</div>
+                    <div className="text-gray-300">Access Available</div>
                   </div>
                   <div className="relative group overflow-hidden rounded-3xl">
                     <Image
@@ -731,7 +725,7 @@ export default function Home() {
                       height={400}
                       className="rounded-3xl shadow-lg hover:scale-110 hover:-rotate-2 transition-all duration-700 w-full h-auto"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
                 </div>
               </div>
@@ -740,19 +734,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Articles Section - RED THEME MAINTAINED */}
+      {/* Articles Section - BLACK & WHITE THEME */}
       <section ref={articlesRef} className="py-24 sm:py-32 articles-section relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <Sparkles className="w-5 h-5 text-red-400" />
-              <span className="text-sm text-red-300 font-medium">Latest Articles</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <Sparkles className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-300 font-medium">Latest Articles</span>
             </div>
             <h2 className="text-5xl font-black text-white mb-6 reveal-text">
               Latest Fitness{" "}
-              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Articles</span>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Articles</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
               Stay updated with the latest fitness tips, workout guides, and wellness advice from our expert trainers
@@ -802,11 +795,11 @@ export default function Home() {
                 key={index}
                 className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 overflow-hidden border border-gray-700/50 article-card cursor-pointer hover:scale-105 hover:-translate-y-4"
               >
-                {/* RED THEME Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
+                {/* BLACK & WHITE THEME Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
 
-                {/* RED THEME Glow Effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 via-transparent to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl"></div>
+                {/* BLACK & WHITE THEME Glow Effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-gray-500/30 via-transparent to-gray-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl"></div>
 
                 <div className="relative z-10">
                   <div className="relative overflow-hidden">
@@ -817,29 +810,29 @@ export default function Home() {
                       height={250}
                       className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    {article.featured && (
-                      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        Featured
-                      </div>
-                    )}
-                    <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm group-hover:bg-red-500 transition-colors duration-300 border border-white/20">
-                      {article.category}
+                                      {article.featured && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-gray-500 to-gray-600 text-white px-4 py-2 rounded-full text-sm font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      Featured
                     </div>
+                  )}
+                                      <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm group-hover:bg-gray-500 transition-colors duration-300 border border-white/20">
+                    {article.category}
+                  </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   </div>
 
                   <div className="p-8">
                     <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
-                      <div className="flex items-center space-x-2 group-hover:text-red-400 transition-colors duration-300">
+                      <div className="flex items-center space-x-2 group-hover:text-gray-400 transition-colors duration-300">
                         <Calendar className="w-4 h-4" />
                         <span>{article.date}</span>
                       </div>
-                      <div className="flex items-center space-x-2 group-hover:text-red-400 transition-colors duration-300">
+                      <div className="flex items-center space-x-2 group-hover:text-gray-400 transition-colors duration-300">
                         <Clock className="w-4 h-4" />
                         <span>{article.readTime}</span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300 leading-tight">
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gray-300 transition-colors duration-300 leading-tight">
                       {article.title}
                     </h3>
                     <p className="text-gray-300 mb-6 line-clamp-3 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -847,14 +840,14 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center">
                           <User className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-sm text-gray-400 group-hover:text-red-400 transition-colors duration-300 font-medium">
+                        <span className="text-sm text-gray-400 group-hover:text-gray-400 transition-colors duration-300 font-medium">
                           {article.author}
                         </span>
                       </div>
-                      <button className="text-red-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
+                      <button className="text-gray-400 font-semibold hover:text-white transition-colors flex items-center group animated-button">
                         Read More
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                       </button>
@@ -862,8 +855,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* RED THEME Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* BLACK & WHITE THEME Corner Accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </article>
             ))}
           </div>
@@ -871,9 +864,9 @@ export default function Home() {
           <div className="text-center mt-16">
             <Link
               href="/blog"
-              className="group relative bg-gradient-to-r from-red-500 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center mx-auto animated-button hover:scale-110 hover:-translate-y-2 w-fit overflow-hidden"
+              className="group relative bg-gradient-to-r from-gray-500 to-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 flex items-center mx-auto animated-button hover:scale-110 hover:-translate-y-2 w-fit overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative z-10">View All Articles</span>
               <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
             </Link>
@@ -881,27 +874,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section - RED THEME MAINTAINED */}
+      {/* CTA Section - BLACK & WHITE THEME */}
       <section ref={ctaRef} className="py-24 sm:py-32 cta-section relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-pink-500/10 to-red-500/10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="cta-content">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <Flame className="w-5 h-5 text-red-400" />
-              <span className="text-sm text-red-300 font-medium">Ready to Transform?</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <Flame className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-300 font-medium">Ready to Transform?</span>
             </div>
             <h2 className="text-5xl sm:text-6xl font-black text-white mb-8">
               Ready to Transform Your{" "}
-              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Life?</span>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Life?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               Join thousands of members who have already achieved their fitness goals with SLAM Fitness Studio. Your
               transformation starts today.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group relative bg-gradient-to-r from-red-500 to-pink-600 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <button className="group relative bg-gradient-to-r from-gray-500 to-gray-600 text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10">Start Free Trial</span>
               </button>
               <Link
@@ -915,19 +907,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form Section - RED THEME MAINTAINED */}
+      {/* Contact Form Section - BLACK & WHITE THEME */}
       <section className="py-24 sm:py-32 contact-section relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-500/5 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full px-6 py-3 mb-8">
-              <Mail className="w-5 h-5 text-red-400" />
-              <span className="text-sm text-red-300 font-medium">Get In Touch</span>
+            <div className="inline-flex items-center gap-2 bg-gray-500/10 backdrop-blur-sm border border-gray-500/20 rounded-full px-6 py-3 mb-8">
+              <Mail className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-300 font-medium">Get In Touch</span>
             </div>
             <h2 className="text-5xl font-black text-white mb-6 reveal-text">
               Get In{" "}
-              <span className="bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">Touch</span>
+              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Touch</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto reveal-text leading-relaxed">
               Ready to start your fitness journey? Contact us today and let's discuss your goals and create a
@@ -938,11 +930,11 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-10 shadow-lg border border-gray-700/50 contact-form hover:shadow-2xl transition-all duration-700 hover:scale-105">
-              {/* RED THEME Hover Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
+              {/* BLACK & WHITE THEME Hover Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-gray-500/20 to-gray-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
 
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-red-300 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-gray-300 transition-colors duration-300">
                   Send us a Message
                 </h3>
                 <form className="space-y-8">
@@ -950,7 +942,7 @@ export default function Home() {
                     <div className="group">
                       <label
                         htmlFor="firstName"
-                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
                       >
                         First Name *
                       </label>
@@ -959,70 +951,70 @@ export default function Home() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
                         placeholder="Enter your first name"
                       />
                     </div>
                     <div className="group">
-                      <label
-                        htmlFor="lastName"
-                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
-                      >
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        required
-                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
-                        placeholder="Enter your last name"
-                      />
+                                              <label
+                          htmlFor="lastName"
+                          className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
+                        >
+                          Last Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          required
+                          className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
+                          placeholder="Enter your last name"
+                        />
                     </div>
                   </div>
                   <div className="group">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
-                      placeholder="Enter your email address"
-                    />
+                                          <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
+                      >
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
+                        placeholder="Enter your email address"
+                      />
                   </div>
                   <div className="group">
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-red-400/50"
-                      placeholder="Enter your phone number"
-                    />
+                                          <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
+                        placeholder="Enter your phone number"
+                      />
                   </div>
                   <div className="group">
-                    <label
-                      htmlFor="service"
-                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
-                    >
-                      Service Interest
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white hover:bg-gray-700/50 hover:border-red-400/50"
-                    >
+                                          <label
+                        htmlFor="service"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
+                      >
+                        Service Interest
+                      </label>
+                      <select
+                        id="service"
+                        name="service"
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white hover:bg-gray-700/50 hover:border-gray-400/50"
+                      >
                       <option value="">Select a service</option>
                       <option value="functional-training">Functional Training</option>
                       <option value="fitness-bootcamp">Fitness Bootcamp</option>
@@ -1033,26 +1025,26 @@ export default function Home() {
                     </select>
                   </div>
                   <div className="group">
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-red-300 transition-colors duration-300"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300 text-white placeholder-gray-400 resize-none hover:bg-gray-700/50 hover:border-red-400/50"
-                      placeholder="Tell us about your fitness goals and how we can help you achieve them..."
-                    ></textarea>
+                                          <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-gray-300 mb-3 group-hover:text-gray-300 transition-colors duration-300"
+                      >
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={5}
+                        required
+                        className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 resize-none hover:bg-gray-700/50 hover:border-gray-400/50"
+                        placeholder="Tell us about your fitness goals and how we can help you achieve them..."
+                      ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="group relative w-full bg-gradient-to-r from-red-500 to-pink-600 text-white px-8 py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                    className="group relative w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white px-8 py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1 overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <span className="relative z-10">Send Message</span>
                     <Send className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   </button>
@@ -1071,12 +1063,12 @@ export default function Home() {
               </div>
 
               <div className="space-y-8">
-                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-gray-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-gray-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-gray-300 transition-colors duration-300">
                       Visit Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -1087,12 +1079,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-gray-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-gray-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                     <Phone className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-gray-300 transition-colors duration-300">
                       Call Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -1103,12 +1095,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-red-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-red-500/30">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                <div className="group flex items-start space-x-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-gray-500/10 hover:to-transparent transition-all duration-500 cursor-pointer border border-gray-700/50 hover:border-gray-500/30">
+                  <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-red-300 transition-colors duration-300">
+                    <h4 className="font-bold text-white mb-2 text-xl group-hover:text-gray-300 transition-colors duration-300">
                       Email Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
@@ -1122,23 +1114,23 @@ export default function Home() {
             </div>
 
             <div className="group bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-gray-700/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 cursor-pointer">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-gray-500/20 to-gray-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl blur-xl"></div>
               <div className="relative z-10">
-                <h4 className="font-bold text-white mb-6 text-xl group-hover:text-red-300 transition-colors duration-300">
+                <h4 className="font-bold text-white mb-6 text-xl group-hover:text-gray-300 transition-colors duration-300">
                   Business Hours
                 </h4>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
                     <span className="font-medium">Monday - Friday</span>
-                    <span className="text-red-400 font-semibold">6:00 AM - 10:00 PM</span>
+                    <span className="text-gray-400 font-semibold">6:00 AM - 10:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
                     <span className="font-medium">Saturday</span>
-                    <span className="text-red-400 font-semibold">6:00 AM - 8:00 PM</span>
+                    <span className="text-gray-400 font-semibold">6:00 AM - 8:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2">
                     <span className="font-medium">Sunday</span>
-                    <span className="text-red-400 font-semibold">7:00 AM - 6:00 PM</span>
+                    <span className="text-gray-400 font-semibold">7:00 AM - 6:00 PM</span>
                   </div>
                 </div>
               </div>

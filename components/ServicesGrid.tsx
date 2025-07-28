@@ -76,11 +76,11 @@ export default function ServicesGrid() {
   return (
     <section className="relative py-20 sm:py-32 overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,107,107,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(78,205,196,0.1),transparent_50%)]"></div>
-      </div>
+      </div> */}
 
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -108,7 +108,7 @@ export default function ServicesGrid() {
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block text-white">Choose Your</span>
-            <span className="block bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+            <span className="block bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent animate-pulse">
               Transformation
             </span>
           </h2>
@@ -194,10 +194,10 @@ export default function ServicesGrid() {
         <div className="text-center mt-20">
           <Link
             href="/services"
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-300 via-red-600 to-red-800 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
           >
             {/* Button Background Animation */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <span className="relative z-10">View All Services</span>
             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
