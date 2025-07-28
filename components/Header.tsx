@@ -3,49 +3,62 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
+import { usePathname } from "next/navigation"
 import { ChevronDown, Menu, X } from "lucide-react"
 
-interface HeaderProps {
-  currentPage?: string
-}
-
-export default function Header({ currentPage = "home" }: HeaderProps) {
+export default function Header() {
+  const pathname = usePathname()
+  
+  // Determine current page based on pathname
+  const getCurrentPage = () => {
+    if (pathname === "/") return "home"
+    if (pathname === "/about") return "about"
+    if (pathname === "/blog") return "blog"
+    if (pathname === "/contact") return "contact"
+    if (pathname.startsWith("/services/")) return "services"
+    return "home"
+  }
+  
+  const currentPage = getCurrentPage()
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const services = [
-    { name: "Functional Training", href: "/services/functional-training" },
-    { name: "Fitness Bootcamp", href: "/services/fitness-bootcamp" },
-    { name: "Body Transformation", href: "/services/body-transformation" },
-    { name: "Weight Management", href: "/services/weight-management" },
+    // Core Training
+    { name: "Functional Training", href: "/services/functional-training", category: "Core Training" },
+    { name: "General Training", href: "/services/general-training", category: "Core Training" },
+    { name: "Strength & Conditioning", href: "/services/strength-conditioning", category: "Core Training" },
+    
+    // Specialized Programs
+    { name: "Fitness Bootcamp", href: "/services/fitness-bootcamp", category: "Specialized Programs" },
+    { name: "Body Transformation", href: "/services/body-transformation", category: "Specialized Programs" },
+    { name: "Weight Management", href: "/services/weight-management", category: "Specialized Programs" },
+    
+    // Combat & Mind-Body
+    { name: "Boxing", href: "/services/boxing", category: "Combat & Mind-Body" },
+    { name: "Yoga", href: "/services/yoga", category: "Combat & Mind-Body" },
+    
+    // High Intensity
+    { name: "HIIT Training", href: "/services/hiit-training", category: "High Intensity" },
+    { name: "Cardio", href: "/services/cardio", category: "High Intensity" },
+    
+    // Group Activities
+    { name: "Group Classes", href: "/services/group-classes", category: "Group Activities" },
   ]
 
   const isActive = (page: string) => {
     if (page === "services") {
       // Check if current page is any service page
-      return currentPage === "services" || 
-             currentPage === "functional-training" || 
-             currentPage === "fitness-bootcamp" || 
-             currentPage === "body-transformation" || 
-             currentPage === "weight-management"
+      return currentPage === "services"
     }
     return currentPage === page
   }
 
   const isServiceActive = (serviceHref: string) => {
-    // Check if we're on a service page by looking at currentPage
-    if (currentPage === "services") {
-      // Extract the service name from href and check if it matches the current URL path
-      const serviceName = serviceHref.split('/').pop()
-      // Since currentPage is "services" for all service pages, we need to check the actual URL
-      if (typeof window !== 'undefined') {
-        const currentPath = window.location.pathname
-        return currentPath === serviceHref
-      }
-    }
-    return false
+    // Check if current pathname matches the service href
+    return pathname === serviceHref
   }
 
   // Close dropdown when clicking outside
@@ -126,22 +139,36 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
                     {/* Invisible bridge to prevent gap */}
                     <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
                     <div 
-                      className="absolute top-full left-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50"
+                      className="absolute top-full left-0 mt-2 w-96 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-4 z-50"
                     >
-                      {services.map((service) => (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          className={`block px-4 py-2 text-sm transition-colors ${
-                            isServiceActive(service.href)
-                              ? "text-red-500 bg-gray-700"
-                              : "text-gray-300 hover:text-red-500 hover:bg-gray-700"
-                          }`}
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
+                      <div className="grid grid-cols-2 gap-4">
+                        {(() => {
+                          const categories = [...new Set(services.map(s => s.category))]
+                          return categories.map((category) => (
+                            <div key={category} className="space-y-2">
+                              <h3 className="px-4 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-700">
+                                {category}
+                              </h3>
+                              {services
+                                .filter(service => service.category === category)
+                                .map((service) => (
+                                  <Link
+                                    key={service.href}
+                                    href={service.href}
+                                    className={`block px-4 py-2 text-sm transition-colors ${
+                                      isServiceActive(service.href)
+                                        ? "text-red-500 bg-gray-700"
+                                        : "text-gray-300 hover:text-red-500 hover:bg-gray-700"
+                                    }`}
+                                    onClick={() => setIsServicesOpen(false)}
+                                  >
+                                    {service.name}
+                                  </Link>
+                                ))}
+                            </div>
+                          ))
+                        })()}
+                      </div>
                     </div>
                   </>
                 )}
@@ -240,24 +267,36 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
                   <ChevronDown className={`w-5 h-5 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isMobileServicesOpen && (
-                  <div className="mt-4 space-y-3 bg-gray-700 rounded-lg p-4">
-                    {services.map((service) => (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        className={`block px-4 py-3 text-base rounded-md transition-all duration-200 ${
-                          isServiceActive(service.href)
-                            ? "text-red-500 font-semibold bg-gray-600 border-l-2 border-red-500"
-                            : "text-gray-300 hover:text-red-500 hover:bg-gray-600"
-                        }`}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false)
-                          setIsMobileServicesOpen(false)
-                        }}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
+                  <div className="mt-4 space-y-4 bg-gray-700 rounded-lg p-4">
+                    {(() => {
+                      const categories = [...new Set(services.map(s => s.category))]
+                      return categories.map((category) => (
+                        <div key={category} className="space-y-2">
+                          <h3 className="px-2 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-600">
+                            {category}
+                          </h3>
+                          {services
+                            .filter(service => service.category === category)
+                            .map((service) => (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                className={`block px-4 py-3 text-base rounded-md transition-all duration-200 ${
+                                  isServiceActive(service.href)
+                                    ? "text-red-500 font-semibold bg-gray-600 border-l-2 border-red-500"
+                                    : "text-gray-300 hover:text-red-500 hover:bg-gray-600"
+                                }`}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false)
+                                  setIsMobileServicesOpen(false)
+                                }}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                        </div>
+                      ))
+                    })()}
                   </div>
                 )}
               </div>

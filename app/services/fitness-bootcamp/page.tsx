@@ -3,14 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Zap, Users, CheckCircle, Timer, TrendingUp } from "lucide-react"
-import Header from "../../../components/Header"
-import Footer from "../../../components/Footer"
+
 
 export default function FitnessBootcamp() {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <Header currentPage="services" />
+
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
@@ -189,7 +188,7 @@ export default function FitnessBootcamp() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

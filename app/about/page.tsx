@@ -17,8 +17,7 @@ import {
   Clock,
 } from "lucide-react"
 import { useGSAP } from "../../lib/useGSAP"
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+
 
 export default function About() {
   const scope = useGSAP()
@@ -48,7 +47,7 @@ export default function About() {
         <div className="h-full bg-gradient-to-r from-gray-500 to-white transform origin-left scale-x-0 transition-transform duration-300"></div>
       </div>
 
-      <Header currentPage="about" />
+
 
       {/* Enhanced Hero Section */}
       <section className="relative pt-24 pb-32 overflow-hidden hero-section min-h-screen flex items-center">
@@ -722,7 +721,7 @@ export default function About() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

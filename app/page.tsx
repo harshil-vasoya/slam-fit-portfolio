@@ -27,8 +27,6 @@ import {
 import { useGSAP } from "../lib/useGSAP"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
 import ServicesGrid from "../components/ServicesGrid"
 
 // Register ScrollTrigger plugin
@@ -418,7 +416,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-gray-400/20 to-gray-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
         </div>
 
-      <Header currentPage="home" />
+
 
       {/* Hero Section - Red Theme */}
       <section
@@ -1139,7 +1137,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

@@ -3,14 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Target, CheckCircle, Star, TrendingUp, Calendar } from "lucide-react"
-import Header from "../../../components/Header"
-import Footer from "../../../components/Footer"
+
 
 export default function BodyTransformation() {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <Header currentPage="services" />
+
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
@@ -211,7 +210,7 @@ export default function BodyTransformation() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }

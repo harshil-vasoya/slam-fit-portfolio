@@ -3,8 +3,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { ArrowRight, Calendar, Clock, User, Search, Tag, Heart, Star, BookOpen } from "lucide-react"
 import { useGSAP } from "../../lib/useGSAP"
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+
 
 export default function Blog() {
   const scope = useGSAP()
@@ -158,7 +157,7 @@ export default function Blog() {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-gray-600/8 to-gray-700/8 rounded-full blur-3xl"></div>
       </div>
 
-      <Header currentPage="blog" />
+
 
       {/* Clean Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -402,7 +401,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   )
 }
