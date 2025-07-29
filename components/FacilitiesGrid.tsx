@@ -10,7 +10,7 @@ const facilities = [
     title: "Steam Room",
     description: "Relax and rejuvenate in our premium steam room for post-workout recovery",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/images/steam_room.jpeg",
     gradient: "from-gray-500 via-gray-600 to-gray-700",
     glowColor: "shadow-[0_0_50px_rgba(107,114,128,0.3)]",
     href: "/facilities/steam-room",
@@ -22,19 +22,30 @@ const facilities = [
     title: "Changing Room",
     description: "Spacious and clean changing facilities with modern amenities",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/images/changing_room.jpeg",
     gradient: "from-gray-600 via-gray-700 to-gray-800",
     glowColor: "shadow-[0_0_50px_rgba(75,85,99,0.3)]",
     href: "/facilities/changing-room",
     badge: "Modern",
     icon: Users,
   },
+  // {
+  //   id: 3,
+  //   title: "Free WiFi",
+  //   description: "Stay connected with high-speed internet throughout the facility",
+  //   image:
+  //     "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   gradient: "from-gray-700 via-gray-800 to-gray-900",
+  //   glowColor: "shadow-[0_0_50px_rgba(55,65,81,0.3)]",
+  //   href: "/facilities/free-wifi",
+  //   badge: "Free",
+  //   icon: Wifi,
+  // },
   {
-    id: 3,
-    title: "Free WiFi",
-    description: "Stay connected with high-speed internet throughout the facility",
-    image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    id: 4,
+    title: "Physiotherapist",
+    description: "Professional physiotherapy services for injury recovery and prevention",
+    image:"/images/physiotherapist.jpeg",
     gradient: "from-gray-700 via-gray-800 to-gray-900",
     glowColor: "shadow-[0_0_50px_rgba(55,65,81,0.3)]",
     href: "/facilities/free-wifi",
@@ -181,7 +192,7 @@ export default function FacilitiesGrid() {
         {/* CTA Section */}
         <div className="text-center mt-20">
           <Link
-            href="/facilities"
+            href="/facilities/steam-room"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
           >
             {/* Button Background Animation */}

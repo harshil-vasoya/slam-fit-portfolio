@@ -21,18 +21,42 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    })
-    alert("Thank you for your message! We'll get back to you soon.")
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -265,11 +289,24 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
+                  {/* Status Messages */}
+                  {submitStatus === "success" && (
+                    <div className="bg-green-900/20 border border-green-700/30 rounded-lg p-4 text-green-300 text-center mb-4">
+                      Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div className="bg-red-900/20 border border-red-700/30 rounded-lg p-4 text-red-300 text-center mb-4">
+                      Sorry, there was an error sending your message. Please try again.
+                    </div>
+                  )}
+                  
                   <button
                     type="submit"
-                  className="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-300 flex items-center justify-center animated-button"
+                    disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-600 hover:to-gray-700 transition-all duration-300 flex items-center justify-center animated-button disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 w-4 h-4" />
                   </button>
                 </form>

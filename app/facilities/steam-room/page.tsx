@@ -255,14 +255,14 @@ export default function SteamRoom() {
             </div>
 
             <div className="relative order-first lg:order-last flex justify-center lg:justify-end">
-              <div className="relative z-10 group">
-                <div className="relative overflow-hidden rounded-3xl">
+              <div className="relative z-10 group w-full h-full">
+                <div className="relative overflow-hidden rounded-3xl w-full h-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/images/steam_room_2.jpg"
                     alt="Steam Room"
-                    width={700}
-                    height={700}
-                    className="rounded-3xl shadow-2xl hero-image w-full h-auto group-hover:scale-110 transition-transform duration-700"
+                    width={1000}
+                    height={1000}
+                    className="rounded-3xl shadow-2xl hero-image w-full h-auto group-hover:scale-110 transition-transform duration-700 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-gray-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
@@ -331,13 +331,13 @@ export default function SteamRoom() {
               <div className="grid grid-cols-2 gap-6 features-image">
                 <div className="space-y-6">
                   <div className="relative group overflow-hidden rounded-3xl">
-                    <Image
+                    {/* <Image
                       src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                       alt="Steam Room Interior"
                       width={300}
                       height={400}
                       className="rounded-3xl shadow-lg hover:scale-110 hover:rotate-2 transition-all duration-700 w-full h-auto"
-                    />
+                    /> */}
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
                   <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
@@ -351,13 +351,13 @@ export default function SteamRoom() {
                     <div className="text-gray-300">Recommended Session</div>
                   </div>
                   <div className="relative group overflow-hidden rounded-3xl">
-                    <Image
+                    {/* <Image
                       src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                       alt="Steam Room Relaxation"
                       width={300}
                       height={400}
                       className="rounded-3xl shadow-lg hover:scale-110 hover:-rotate-2 transition-all duration-700 w-full h-auto"
-                    />
+                    /> */}
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
                 </div>

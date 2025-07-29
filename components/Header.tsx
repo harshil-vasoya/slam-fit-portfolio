@@ -13,7 +13,7 @@ export default function Header() {
   const getCurrentPage = () => {
     if (pathname === "/") return "home"
     if (pathname === "/about") return "about"
-    if (pathname === "/blog") return "blog"
+    if (pathname === "/blog" || pathname.startsWith("/blog/")) return "blog"
     if (pathname === "/contact") return "contact"
     if (pathname.startsWith("/services/")) return "services"
     if (pathname.startsWith("/facilities/")) return "facilities"
@@ -269,9 +269,11 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="hidden md:block bg-gradient-primary text-white px-6 py-2 rounded-full font-medium hover:shadow-glow transition-all duration-300 animated-button">
-              Join Now
-            </button>
+            <Link href="/contact">
+              <button className="hidden md:block bg-gradient-primary text-white px-6 py-2 rounded-full font-medium hover:shadow-glow transition-all duration-300 animated-button">
+                Franchise Enquiry
+              </button>
+            </Link>
             <button
               className="md:hidden text-gray-300 hover:text-white"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

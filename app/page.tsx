@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import {
   ArrowRight,
   Play,
@@ -43,6 +43,60 @@ export default function Home() {
   const statsRef = useRef(null)
   const articlesRef = useRef(null)
   const ctaRef = useRef(null)
+  
+  // Contact form state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   useGSAP(() => {
     // Set initial states
@@ -939,7 +993,7 @@ export default function Home() {
                 <h3 className="text-3xl font-bold text-white mb-8 group-hover:text-gray-300 transition-colors duration-300">
                   Send us a Message
                 </h3>
-                <form className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label
@@ -952,6 +1006,8 @@ export default function Home() {
                         type="text"
                         id="firstName"
                         name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                         required
                         className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
                         placeholder="Enter your first name"
@@ -968,6 +1024,8 @@ export default function Home() {
                           type="text"
                           id="lastName"
                           name="lastName"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
                           required
                           className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
                           placeholder="Enter your last name"
@@ -985,6 +1043,8 @@ export default function Home() {
                         type="email"
                         id="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         required
                         className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
                         placeholder="Enter your email address"
@@ -1001,6 +1061,8 @@ export default function Home() {
                         type="tel"
                         id="phone"
                         name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 hover:bg-gray-700/50 hover:border-gray-400/50"
                         placeholder="Enter your phone number"
                       />
@@ -1015,6 +1077,8 @@ export default function Home() {
                       <select
                         id="service"
                         name="service"
+                        value={formData.service}
+                        onChange={handleInputChange}
                         className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white hover:bg-gray-700/50 hover:border-gray-400/50"
                       >
                       <option value="">Select a service</option>
@@ -1037,17 +1101,34 @@ export default function Home() {
                         id="message"
                         name="message"
                         rows={5}
+                        value={formData.message}
+                        onChange={handleInputChange}
                         required
                         className="w-full px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 text-white placeholder-gray-400 resize-none hover:bg-gray-700/50 hover:border-gray-400/50"
                         placeholder="Tell us about your fitness goals and how we can help you achieve them..."
                       ></textarea>
                   </div>
+                  {/* Status Messages */}
+                  {submitStatus === "success" && (
+                    <div className="bg-green-900/20 border border-green-700/30 rounded-lg p-4 text-green-300 text-center">
+                      Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div className="bg-red-900/20 border border-red-700/30 rounded-lg p-4 text-red-300 text-center">
+                      Sorry, there was an error sending your message. Please try again.
+                    </div>
+                  )}
+                  
                   <button
                     type="submit"
-                    className="group relative w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white px-8 py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1 overflow-hidden"
+                    disabled={isSubmitting}
+                    className="group relative w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white px-8 py-5 rounded-xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-105 hover:-translate-y-1 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <span className="relative z-10">Send Message</span>
+                    <span className="relative z-10">
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </span>
                     <Send className="ml-3 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
                   </button>
                 </form>
