@@ -28,6 +28,7 @@ import { useGSAP } from "../lib/useGSAP"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import ServicesGrid from "../components/ServicesGrid"
+import FacilitiesGrid from "../components/FacilitiesGrid"
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -638,6 +639,9 @@ export default function Home() {
 
       {/* Services Grid Section */}
       <ServicesGrid />
+
+      {/* Facilities Grid Section */}
+      <FacilitiesGrid />
 
       {/* Features Section - Black & White Theme */}
       <section ref={featuresRef} className="py-24 sm:py-32 features-section relative">

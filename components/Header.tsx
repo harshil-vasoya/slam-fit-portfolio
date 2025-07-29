@@ -16,14 +16,18 @@ export default function Header() {
     if (pathname === "/blog") return "blog"
     if (pathname === "/contact") return "contact"
     if (pathname.startsWith("/services/")) return "services"
+    if (pathname.startsWith("/facilities/")) return "facilities"
     return "home"
   }
   
   const currentPage = getCurrentPage()
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isFacilitiesOpen, setIsFacilitiesOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [isMobileFacilitiesOpen, setIsMobileFacilitiesOpen] = useState(false)
+  const servicesDropdownRef = useRef<HTMLDivElement>(null)
+  const facilitiesDropdownRef = useRef<HTMLDivElement>(null)
 
   const services = [
     // Core Training
@@ -48,10 +52,23 @@ export default function Header() {
     { name: "Group Classes", href: "/services/group-classes", category: "Group Activities" },
   ]
 
+  const facilities = [
+    { name: "Steam Room", href: "/facilities/steam-room" },
+    { name: "Changing Room", href: "/facilities/changing-room" },
+    { name: "Free WiFi", href: "/facilities/free-wifi" },
+    { name: "Physiotherapist", href: "/facilities/physiotherapist" },
+    { name: "BCA Testing", href: "/facilities/bca-testing" },
+    { name: "Nutritionist", href: "/facilities/nutritionist" },
+  ]
+
   const isActive = (page: string) => {
     if (page === "services") {
       // Check if current page is any service page
       return currentPage === "services"
+    }
+    if (page === "facilities") {
+      // Check if current page is any facility page
+      return currentPage === "facilities"
     }
     return currentPage === page
   }
@@ -61,11 +78,19 @@ export default function Header() {
     return pathname === serviceHref
   }
 
-  // Close dropdown when clicking outside
+  const isFacilityActive = (facilityHref: string) => {
+    // Check if current pathname matches the facility href
+    return pathname === facilityHref
+  }
+
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false)
+      }
+      if (facilitiesDropdownRef.current && !facilitiesDropdownRef.current.contains(event.target as Node)) {
+        setIsFacilitiesOpen(false)
       }
     }
 
@@ -117,7 +142,7 @@ export default function Header() {
 
               {/* Services Dropdown with Hover */}
               <div
-                ref={dropdownRef}
+                ref={servicesDropdownRef}
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -168,6 +193,53 @@ export default function Header() {
                             </div>
                           ))
                         })()}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Facilities Dropdown with Hover */}
+              <div
+                ref={facilitiesDropdownRef}
+                className="relative"
+                onMouseEnter={() => setIsFacilitiesOpen(true)}
+                onMouseLeave={() => setIsFacilitiesOpen(false)}
+              >
+                <button 
+                  className={`px-3 py-2 text-sm font-medium transition-colors nav-item flex items-center ${
+                    isActive("facilities")
+                      ? "text-red-500 border-b-2 border-red-500"
+                      : "text-gray-300 hover:text-red-500"
+                  }`}
+                >
+                  Facilities
+                  <ChevronDown
+                    className={`ml-1 w-4 h-4 transition-transform ${isFacilitiesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {isFacilitiesOpen && (
+                  <>
+                    {/* Invisible bridge to prevent gap */}
+                    <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
+                    <div 
+                      className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-4 z-50"
+                    >
+                      <div className="space-y-2">
+                        {facilities.map((facility) => (
+                          <Link
+                            key={facility.href}
+                            href={facility.href}
+                            className={`block px-4 py-2 text-sm transition-colors ${
+                              isFacilityActive(facility.href)
+                                ? "text-red-500 bg-gray-700"
+                                : "text-gray-300 hover:text-red-500 hover:bg-gray-700"
+                            }`}
+                            onClick={() => setIsFacilitiesOpen(false)}
+                          >
+                            {facility.name}
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </>
@@ -297,6 +369,40 @@ export default function Header() {
                         </div>
                       ))
                     })()}
+                  </div>
+                )}
+              </div>
+              <div>
+                <button
+                  onClick={() => setIsMobileFacilitiesOpen(!isMobileFacilitiesOpen)}
+                  className={`flex items-center justify-between w-full px-6 py-4 rounded-lg transition-all duration-200 text-lg ${
+                    isActive("facilities") 
+                      ? "text-red-500 font-semibold bg-gray-700 border-l-4 border-red-500" 
+                      : "text-gray-200 hover:text-red-500 hover:bg-gray-700"
+                  }`}
+                >
+                  Facilities
+                  <ChevronDown className={`w-5 h-5 transition-transform ${isMobileFacilitiesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {isMobileFacilitiesOpen && (
+                  <div className="mt-4 space-y-2 bg-gray-700 rounded-lg p-4">
+                    {facilities.map((facility) => (
+                      <Link
+                        key={facility.href}
+                        href={facility.href}
+                        className={`block px-4 py-3 text-base rounded-md transition-all duration-200 ${
+                          isFacilityActive(facility.href)
+                            ? "text-red-500 font-semibold bg-gray-600 border-l-2 border-red-500"
+                            : "text-gray-300 hover:text-red-500 hover:bg-gray-600"
+                        }`}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false)
+                          setIsMobileFacilitiesOpen(false)
+                        }}
+                      >
+                        {facility.name}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
