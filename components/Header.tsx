@@ -50,6 +50,7 @@ export default function Header() {
     
     // Group Activities
     { name: "Group Classes", href: "/services/group-classes", category: "Group Activities" },
+    { name: "Zumba", href: "/services/zumba", category: "Group Activities" },
   ]
 
   const facilities = [

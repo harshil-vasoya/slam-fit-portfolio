@@ -13,7 +13,7 @@ const services = [
       "/gym/body trans.png",
     gradient: "from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1]",
     glowColor: "shadow-[0_0_50px_rgba(255,107,107,0.3)]",
-    href: "/services/weight-management",
+    href: "/services/body-transformation",
     badge: "Most Popular",
   },
   {
@@ -36,7 +36,7 @@ const services = [
       "/gym/yoga.png",
     gradient: "from-[#ffecd2] via-[#fcb69f] to-[#ff8a80]",
     glowColor: "shadow-[0_0_50px_rgba(255,236,210,0.3)]",
-    href: "/services/fitness-bootcamp",
+    href: "/services/yoga",
     badge: "Premium",
   },
   {
@@ -47,7 +47,7 @@ const services = [
       "/gym/boxing.png",
     gradient: "from-[#a8edea] via-[#fed6e3] to-[#d299c2]",
     glowColor: "shadow-[0_0_50px_rgba(168,237,234,0.3)]",
-    href: "/services/body-transformation",
+    href: "/services/boxing",
     badge: "Trending",
   },
 ]
@@ -194,7 +194,7 @@ export default function ServicesGrid() {
         {/* CTA Section */}
         <div className="text-center mt-20">
           <Link
-            href="/services"
+            href="/services/functional-training"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.4)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 relative overflow-hidden"
           >
             {/* Button Background Animation */}

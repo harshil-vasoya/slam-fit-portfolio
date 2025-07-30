@@ -175,7 +175,7 @@ export default function Nutritionist() {
               <div className="relative z-10 group w-full h-full">
                 <div className="relative overflow-hidden rounded-3xl w-full h-full">
                   <Image
-                    src="/images/Nutritionist.webp"
+                    src="/gym/nutritionist.png"
                     alt="Nutritionist"
                     width={700}
                     height={700}
