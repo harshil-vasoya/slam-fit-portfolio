@@ -48,9 +48,9 @@ const facilities = [
     image:"/images/physiotherapist.jpeg",
     gradient: "from-gray-700 via-gray-800 to-gray-900",
     glowColor: "shadow-[0_0_50px_rgba(55,65,81,0.3)]",
-    href: "/facilities/free-wifi",
+    href: "/facilities/physiotherapist",
     badge: "Free",
-    icon: Wifi,
+    icon: Stethoscope,
   }
 ]
 

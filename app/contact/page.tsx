@@ -137,7 +137,7 @@ export default function Contact() {
               {
                 icon: Mail,
                 title: "Email Us",
-                info: "info@slamfitnessstudio.in\nsureshs@paulsons.in",
+                info: "slamfitnessblr@gmail.com",
                 action: "Send Email",
                 gradient: "from-gray-700 to-gray-800",
               },
@@ -360,9 +360,8 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-2">Email Addresses</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      General: info@slamfitnessstudio.in
-                      <br />
-                      Management: sureshs@paulsons.in
+                      <a href="mailto:slamfitnessblr@gmail.com" className="hover:text-white transition-colors">slamfitnessblr@gmail.com</a>
+                      
                     </p>
                     <p className="text-sm text-gray-400 mt-2">We respond within 24 hours</p>
                   </div>
