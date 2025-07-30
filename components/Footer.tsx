@@ -56,11 +56,7 @@ export default function Footer() {
                   Blog
                 </Link>
               </li>
-              <li>
-                <Link href="/careers" className="hover:text-white transition-colors">
-                  Careers
-                </Link>
-              </li>
+             
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
@@ -71,10 +67,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>#18/70, Halls Road, Kilpauk,</p>
-              <p>Chennai – 600 010.</p>
-              <p>+91 98414 63406</p>
-              <p>info@slamfitnessstudio.in</p>
+            <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</a>
+            <p><a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a></p>
+            <p><a href="mailto:info@slamfitnessstudio.in" className="hover:text-white transition-colors">info@slamfitnessstudio.in</a></p>  
             </div>
           </div>
         </div>

@@ -1151,9 +1151,9 @@ export default function Home() {
                       Visit Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
-                      #18/70, Halls Road, Kilpauk,
-                      <br />
-                      Chennai – 600 010, India
+                    <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                    1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102
+                    </a>
                     </p>
                   </div>
                 </div>
@@ -1167,9 +1167,8 @@ export default function Home() {
                       Call Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
-                      +91 98414 63406
-                      <br />
-                      +91 70944 79145
+                      <a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a>
+                      
                     </p>
                   </div>
                 </div>
@@ -1200,17 +1199,10 @@ export default function Home() {
                 </h4>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
-                    <span className="font-medium">Monday - Friday</span>
-                    <span className="text-gray-400 font-semibold">6:00 AM - 10:00 PM</span>
+                    <span className="font-medium">Monday - Sunday</span>
+                    <span className="text-gray-400 font-semibold">5:30 am–11:30 pm  </span>
                   </div>
-                  <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2 border-b border-gray-700/50">
-                    <span className="font-medium">Saturday</span>
-                    <span className="text-gray-400 font-semibold">6:00 AM - 8:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center group-hover:text-gray-200 transition-colors duration-300 py-2">
-                    <span className="font-medium">Sunday</span>
-                    <span className="text-gray-400 font-semibold">7:00 AM - 6:00 PM</span>
-                  </div>
+                  
                 </div>
               </div>
             </div>

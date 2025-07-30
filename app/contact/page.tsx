@@ -331,9 +331,9 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-2">Studio Address</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      #18/70, Halls Road, Kilpauk,
-                      <br />
-                      Chennai – 600 010, Tamil Nadu, India
+                      <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                      1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102
+                      </a>
                     </p>
                     <p className="text-sm text-gray-400 mt-2">Near Kilpauk Medical College</p>
                   </div>
@@ -346,9 +346,8 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-white mb-2">Phone Numbers</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      Primary: +91 98414 63406
-                      <br />
-                      Secondary: +91 70944 79145
+                      <a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a>
+                      
                     </p>
                     <p className="text-sm text-gray-400 mt-2">Available during business hours</p>
                   </div>
@@ -378,17 +377,10 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2 text-gray-300">
                   <div className="flex justify-between items-center">
-                    <span>Monday - Friday</span>
-                    <span className="text-gray-400 font-medium">6:00 AM - 10:00 PM</span>
+                    <span>Monday - Sunday</span>
+                    <span className="text-gray-400 font-medium">5:30 am–11:30 pm  </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span>Saturday</span>
-                    <span className="text-gray-400 font-medium">6:00 AM - 8:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Sunday</span>
-                    <span className="text-gray-400 font-medium">7:00 AM - 6:00 PM</span>
-                  </div>
+                
                 </div>
               </div>
 
@@ -399,10 +391,13 @@ export default function Contact() {
                   <div className="text-center">
                     <MapPin className="w-8 h-8 text-gray-500 mx-auto mb-2" />
                     <p className="text-gray-300 mb-2">Interactive Map</p>
-                    <p className="text-sm text-gray-400 mb-4">#18/70, Halls Road, Kilpauk, Chennai</p>
-                    <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-gray-600 hover:to-gray-700 transition-all duration-300">
-                      Open in Google Maps
-                    </button>
+                    <p className="text-sm text-gray-400 mb-4">1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
+                    <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                      <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-gray-600 hover:to-gray-700 transition-all duration-300">
+                        Open in Google Maps
+                      </button>
+                    </a>
+                    
                   </div>
                 </div>
               </div>
