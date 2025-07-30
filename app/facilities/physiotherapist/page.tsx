@@ -175,7 +175,7 @@ export default function Physiotherapist() {
               <div className="relative z-10 group w-full h-full">
                 <div className="relative overflow-hidden rounded-3xl w-full h-full">
                   <Image
-                    src="/images/Physiotherapist_1.jpg"
+                    src="/images/physiotherapist.jpg"
                     alt="Physiotherapist"
                     width={700}
                     height={700}
