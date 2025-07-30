@@ -42,7 +42,7 @@ export default function FunctionalTraining() {
             <div className="relative">
               <div className="relative floating">
                 <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="/gym/fun. trai.1.png"
                   alt="Functional Training"
                   width={600}
                   height={600}
@@ -140,7 +140,7 @@ export default function FunctionalTraining() {
             </div>
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/gym/fun. trai.2.png"
                 alt="Training Session"
                 width={600}
                 height={400}

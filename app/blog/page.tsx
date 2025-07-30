@@ -128,7 +128,7 @@ export default function Blog() {
               >
                 <div className="relative overflow-hidden">
                   <Image
-                    src={article.image || "/placeholder.svg"}
+                    src={"/images/about.png"}
                     alt={article.title}
                     width={600}
                     height={350}
