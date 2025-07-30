@@ -50,7 +50,7 @@ export default function About() {
 
 
       {/* Enhanced Hero Section */}
-      <section className="relative pt-24 pb-32 overflow-hidden hero-section min-h-screen flex items-center">
+      <section className="relative pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-32 overflow-hidden hero-section min-h-screen flex items-center">
         {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-gray-900/90 to-black/95 hero-bg parallax-bg"></div> */}
 
         {/* Advanced Floating Elements */}
@@ -59,42 +59,42 @@ export default function About() {
             <Award className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-20 md:h-20 text-red-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-red-400/20 to-transparent rounded-3xl animate-pulse"></div>
           </div> */}
-          <div className="absolute top-40 right-4 md:right-40 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-white/40 to-gray-600/40 rounded-3xl floating backdrop-blur-2xl border border-white/20 shadow-2xl shadow-white/20">
-            <Users className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-16 md:h-16 text-white" />
+          <div className="absolute top-20 sm:top-32 md:top-40 right-2 sm:right-4 md:right-40 w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 bg-gradient-to-br from-white/40 to-gray-600/40 rounded-3xl floating backdrop-blur-2xl border border-white/20 shadow-2xl shadow-white/20">
+            <Users className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 md:w-16 md:h-16 text-white" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl animate-pulse delay-300"></div>
           </div>
           {/* <div className="absolute bottom-20 left-1/4 w-16 h-16 md:w-28 md:h-28 bg-gradient-to-br from-pink-500/40 to-red-600/40 rounded-3xl floating pulse-element backdrop-blur-2xl border border-pink-400/20 shadow-2xl shadow-pink-500/20">
             <Target className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-14 md:h-14 text-pink-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-transparent rounded-3xl animate-pulse delay-600"></div>
           </div> */}
-          <div className="absolute top-1/2 right-4 md:right-20 w-18 h-18 md:w-24 md:h-24 bg-gradient-to-br from-gray-500/40 to-white/40 rounded-3xl floating backdrop-blur-2xl border border-gray-400/20 shadow-2xl shadow-gray-500/20">
-            <Heart className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 text-white" />
+          <div className="absolute top-1/2 right-2 sm:right-4 md:right-20 w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-gradient-to-br from-gray-500/40 to-white/40 rounded-3xl floating backdrop-blur-2xl border border-gray-400/20 shadow-2xl shadow-gray-500/20">
+            <Heart className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl animate-pulse delay-900"></div>
           </div>
-          <div className="absolute bottom-40 right-1/3 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-white/40 to-gray-600/40 rounded-3xl floating pulse-element backdrop-blur-2xl border border-white/20 shadow-2xl shadow-white/20">
-            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 md:w-10 md:h-10 text-white" />
+          <div className="absolute bottom-20 sm:bottom-32 md:bottom-40 right-1/4 sm:right-1/3 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-gradient-to-br from-white/40 to-gray-600/40 rounded-3xl floating pulse-element backdrop-blur-2xl border border-white/20 shadow-2xl shadow-white/20">
+            <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 text-white" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl animate-pulse delay-1200"></div>
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="text-center space-y-12">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-500/20 to-white/20 backdrop-blur-xl border border-gray-400/30 rounded-full px-8 py-4 mb-8 shadow-lg shadow-gray-500/20">
-                <Heart className="w-6 h-6 text-white animate-pulse" />
-                <span className="text-white font-semibold tracking-wide">About Our Story</span>
-                <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+          <div className="text-center space-y-8 sm:space-y-10 md:space-y-12">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-500/20 to-white/20 backdrop-blur-xl border border-gray-400/30 rounded-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 mb-4 sm:mb-6 md:mb-8 shadow-lg shadow-gray-500/20">
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white animate-pulse" />
+                <span className="text-white font-semibold tracking-wide text-sm sm:text-base md:text-lg">About Our Story</span>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-ping"></div>
               </div>
 
-              <h1 className="text-4xl sm:text-3xl lg:text-5xl font-black text-white leading-tight">
-                <span className="hero-title block mb-4">About</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight px-2">
+                <span className="hero-title block mb-2 sm:mb-3 md:mb-4">About</span>
                 <span className="text-gradient hero-title block bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent bg-size-200 animate-gradient-x drop-shadow-2xl">
                   SLAM Fitness
                 </span>
               </h1>
 
-              <div className="max-w-5xl mx-auto space-y-6">
-                <p className="text-2xl sm:text-3xl text-gray-200 hero-subtitle leading-relaxed font-light">
+              <div className="max-w-4xl sm:max-w-5xl mx-auto space-y-4 sm:space-y-6 px-4">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 hero-subtitle leading-relaxed font-light">
                   More than just a gym - we're a{" "}
                   <span className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-bold">
                     community dedicated
@@ -102,29 +102,29 @@ export default function About() {
                   to transforming lives through fitness, wellness, and personal growth.
                 </p>
 
-                <div className="flex items-center justify-center space-x-8 text-gray-400 hero-stats">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-gray-400 hero-stats">
                   <div className="flex items-center space-x-2 group cursor-pointer">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="text-yellow-400 fill-current w-5 h-5 group-hover:scale-125 transition-transform duration-300"
+                          className="text-yellow-400 fill-current w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-125 transition-transform duration-300"
                           style={{ animationDelay: `${i * 0.1}s` }}
                         />
                       ))}
                     </div>
-                    <span className="font-semibold">4.9/5 Rating</span>
+                    <span className="font-semibold text-sm sm:text-base">4.9/5 Rating</span>
                   </div>
-                                      <div className="w-1 h-6 bg-gray-600"></div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-5 h-5 text-white" />
-                      <span className="font-semibold">10,000+ Members</span>
-                    </div>
-                    <div className="w-1 h-6 bg-gray-600"></div>
-                    <div className="flex items-center space-x-2">
-                      <Award className="w-5 h-5 text-white" />
-                      <span className="font-semibold">9 Years Excellence</span>
-                    </div>
+                  <div className="hidden sm:block w-1 h-6 bg-gray-600"></div>
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                    <span className="font-semibold text-sm sm:text-base">10,000+ Members</span>
+                  </div>
+                  <div className="hidden sm:block w-1 h-6 bg-gray-600"></div>
+                  <div className="flex items-center space-x-2">
+                    <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                    <span className="font-semibold text-sm sm:text-base">9 Years Excellence</span>
+                  </div>
                 </div>
               </div>
             </div>

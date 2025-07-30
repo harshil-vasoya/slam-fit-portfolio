@@ -115,60 +115,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Cards */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: MapPin,
-                title: "Visit Us",
-                info: "#18/70, Halls Road, Kilpauk\nChennai – 600 010, India",
-                action: "Get Directions",
-                gradient: "from-gray-800 to-gray-900",
-              },
-              {
-                icon: Phone,
-                title: "Call Us",
-                info: "+91 98414 63406\n+91 70944 79145",
-                action: "Call Now",
-                gradient: "from-gray-600 to-gray-700",
-              },
-              {
-                icon: Mail,
-                title: "Email Us",
-                info: "slamfitnessblr@gmail.com",
-                action: "Send Email",
-                gradient: "from-gray-700 to-gray-800",
-              },
-              {
-                icon: Clock,
-                title: "Hours",
-                info: "Mon-Fri: 6AM - 10PM\nSat: 6AM - 8PM\nSun: 7AM - 6PM",
-                action: "View Schedule",
-                gradient: "from-gray-800 to-gray-900",
-              },
-            ].map((contact, index) => (
-              <div
-                key={index}
-                className="group bg-black backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-gray-500/30 transition-all duration-300 service-card text-center hover:bg-gray-800/50"
-              >
-                <div className={`w-12 h-12 bg-gradient-to-r ${contact.gradient} rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-white`}>
-                  <contact.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-gray-300 transition-colors duration-300">
-                  {contact.title}
-                </h3>
-                <p className="text-gray-300 mb-4 whitespace-pre-line text-sm leading-relaxed">{contact.info}</p>
-                <button className="text-gray-400 font-medium hover:text-white transition-colors flex items-center mx-auto text-sm">
-                  {contact.action}
-                  <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Main Contact Section */}
       <section className="py-20">
@@ -385,20 +332,18 @@ export default function Contact() {
 
               {/* Map Placeholder */}
                 <div className="bg-black rounded-xl p-6 border border-gray-700/30">
-                <h3 className="font-semibold text-white mb-4">Find Us on Map</h3>
-                <div className="bg-black rounded-lg h-48 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-8 h-8 text-gray-500 mx-auto mb-2" />
-                    <p className="text-gray-300 mb-2">Interactive Map</p>
-                    <p className="text-sm text-gray-400 mb-4">1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
-                    <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                      <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-gray-600 hover:to-gray-700 transition-all duration-300">
-                        Open in Google Maps
-                      </button>
-                    </a>
-                    
-                  </div>
-                </div>
+                {/* <h3 className="font-semibold text-white mb-4">Find Us on Map</h3>
+                 */}
+               <iframe 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.844315354846!2d77.6490845!3d12.917725899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15ed9116c58f%3A0xd11b8f6e1ca02b29!2sSLAM%20Lifestyle%20%26%20Fitness%20Studio%2C%20HSR%20LAYOUT!5e0!3m2!1sen!2sin!4v1753894236083!5m2!1sen!2sin" 
+                 width="100%" 
+                 height="400" 
+                 style={{ border: 0, borderRadius: '8px' }} 
+                 allowFullScreen={true} 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+                 title="SLAM Fitness Studio Location"
+               />
               </div>
             </div>
           </div>
@@ -473,7 +418,7 @@ export default function Contact() {
               </button>
               <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 animated-button flex items-center justify-center">
                 <Phone className="mr-2 w-5 h-5" />
-                Call: +91 98414 63406
+                Call: +91 8748899333
               </button>
             </div>
           </div>
