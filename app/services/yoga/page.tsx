@@ -22,10 +22,15 @@ export default function Yoga() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
+                 <Link
+                  href="/contact"
+                >
+                 
                 <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group">
                   Book Free Trial
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
+                </Link>
                 <Link
                   href="/contact"
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center"

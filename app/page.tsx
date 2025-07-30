@@ -1164,10 +1164,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2 text-xl group-hover:text-gray-300 transition-colors duration-300">
-                      Call Us
+                       Message Us
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
-                      <a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a>
+                      <a href="https://wa.me/918748899333" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 8748899333</a>
                       
                     </p>
                   </div>

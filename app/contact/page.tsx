@@ -291,9 +291,9 @@ export default function Contact() {
                     <Phone className="w-5 h-5 text-white " />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">Phone Numbers</h3>
+                    <h3 className="font-semibold text-white mb-2">Message Us</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      <a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a>
+                      <a href="https://wa.me/918748899333" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 8748899333</a>
                       
                     </p>
                     <p className="text-sm text-gray-400 mt-2">Available during business hours</p>

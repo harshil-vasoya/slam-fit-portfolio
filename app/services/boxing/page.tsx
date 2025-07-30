@@ -24,7 +24,6 @@ export default function Boxing() {
               <div className="flex flex-col sm:flex-row gap-4">
               <Link
                   href="/contact"
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center"
                 >
                  
                 <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group">

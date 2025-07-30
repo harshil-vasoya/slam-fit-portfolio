@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { Phone } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -68,7 +69,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
             <a href="https://www.google.com/maps/place/SLAM+Lifestyle+%26+Fitness+Studio,+HSR+LAYOUT/@12.9177259,77.6490845,17z/data=!4m6!3m5!1s0x3bae15ed9116c58f:0xd11b8f6e1ca02b29!8m2!3d12.9177259!4d77.6490845!16s%2Fg%2F11mcknr_24?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</a>
-            <p><a href="tel:+918748899333" className="hover:text-white transition-colors">+91 8748899333</a></p>
+              
+              <p><a href="https://wa.me/918748899333" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 8748899333</a></p>
             <p><a href="mailto:slamfitnessblr@gmail.com" className="hover:text-white transition-colors">slamfitnessblr@gmail.com</a></p>  
             </div>
           </div>
