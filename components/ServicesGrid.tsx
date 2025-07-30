@@ -10,7 +10,7 @@ const services = [
     title: "Slam Transform",
     description: "Get coached to lose weight for good",
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/gym/body trans.png",
     gradient: "from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1]",
     glowColor: "shadow-[0_0_50px_rgba(255,107,107,0.3)]",
     href: "/services/weight-management",
@@ -18,10 +18,10 @@ const services = [
   },
   {
     id: 2,
-    title: "The .fit way",
-    description: "Making health easy, one day at a time",
+    title: "Functional Training",
+    description: "Build real-world strength and mobility with our advanced functional training programs.",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/gym/fun. trai.1.png",
     gradient: "from-[#667eea] via-[#764ba2] to-[#f093fb]",
     glowColor: "shadow-[0_0_50px_rgba(102,126,234,0.3)]",
     href: "/services/functional-training",
@@ -29,10 +29,11 @@ const services = [
   },
   {
     id: 3,
-    title: "Workout Gear",
-    description: "Everything you need for your workout",
+    title: "Yoga",
+    // description in  words
+    description: "Experience the transformative power of yoga with our expert-led classes.",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/gym/yoga.png",
     gradient: "from-[#ffecd2] via-[#fcb69f] to-[#ff8a80]",
     glowColor: "shadow-[0_0_50px_rgba(255,236,210,0.3)]",
     href: "/services/fitness-bootcamp",
@@ -40,10 +41,10 @@ const services = [
   },
   {
     id: 4,
-    title: "Sugar.fit",
-    description: "Reverse Type 2 Diabetes and Prediabetes",
+    title: "Boxing",
+    description: "Get in shape and learn self-defense with our boxing classes.",
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "/gym/boxing.png",
     gradient: "from-[#a8edea] via-[#fed6e3] to-[#d299c2]",
     glowColor: "shadow-[0_0_50px_rgba(168,237,234,0.3)]",
     href: "/services/body-transformation",

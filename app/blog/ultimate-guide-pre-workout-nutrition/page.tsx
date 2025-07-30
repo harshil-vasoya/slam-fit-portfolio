@@ -235,7 +235,7 @@ export default function PreWorkoutNutritionBlog() {
               <div className="relative z-10 group w-full h-full">
                 <div className="relative overflow-hidden rounded-3xl w-full h-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/gym/nutrition.png"
                     alt="Pre-Workout Nutrition"
                     width={800}
                     height={800}

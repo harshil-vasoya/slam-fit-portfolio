@@ -12,7 +12,7 @@ export default function Blog() {
       id: 1,
       slug: "10-essential-exercises-core-strength",
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "/gym/blog1.png",
       category: "Workouts",
       title: "10 Essential Exercises for Building Core Strength",
       excerpt:
@@ -25,7 +25,7 @@ export default function Blog() {
       id: 2,
       slug: "ultimate-guide-pre-workout-nutrition",
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "/gym/nutrition.png",
       category: "Nutrition",
       title: "The Ultimate Guide to Pre-Workout Nutrition",
       excerpt:
@@ -38,7 +38,7 @@ export default function Blog() {
       id: 3,
       slug: "stay-motivated-fitness-journey",
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "/gym/blog3.png",
       category: "Wellness",
       title: "How to Stay Motivated on Your Fitness Journey",
       excerpt:
@@ -51,7 +51,7 @@ export default function Blog() {
       id: 4,
       slug: "functional-training-vs-traditional-gym",
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "/gym/blog4.png",
       category: "Training",
       title: "Functional Training vs Traditional Gym Workouts",
       excerpt:
@@ -128,7 +128,7 @@ export default function Blog() {
               >
                 <div className="relative overflow-hidden">
                   <Image
-                    src={"/images/about.png"}
+                    src={article.image}
                     alt={article.title}
                     width={600}
                     height={350}

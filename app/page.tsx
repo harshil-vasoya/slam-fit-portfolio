@@ -561,7 +561,7 @@ export default function Home() {
               <div className="relative z-10 group">
                 <div className="relative overflow-hidden rounded-3xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/gym/home.png"
                     alt="Fitness Training"
                     width={700}
                     height={700}
@@ -753,7 +753,7 @@ export default function Home() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-6 features-image">
                 <div className="space-y-6">
-                  <div className="relative group overflow-hidden rounded-3xl">
+                  {/* <div className="relative group overflow-hidden rounded-3xl">
                     <Image
                       src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                       alt="Gym Equipment"
@@ -762,6 +762,10 @@ export default function Home() {
                       className="rounded-3xl shadow-lg hover:scale-110 hover:rotate-2 transition-all duration-700 w-full h-auto"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                  </div> */}
+                   <div className="bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                    <div className="text-3xl font-bold text-white mb-2"><Dumbbell className="w-8 h-8" /></div>
+                    <div className="text-gray-300">Premium Equipment</div>
                   </div>
                   <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <div className="text-3xl font-bold text-white mb-2">500+</div>
@@ -769,11 +773,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-6 mt-12">
-                  <div className="bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                <div className="bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <div className="text-3xl font-bold text-white mb-2">24/7</div>
                     <div className="text-gray-300">Access Available</div>
                   </div>
-                  <div className="relative group overflow-hidden rounded-3xl">
+                
+                  {/* <div className="relative group overflow-hidden rounded-3xl">
                     <Image
                       src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                       alt="Training Session"
@@ -782,7 +787,7 @@ export default function Home() {
                       className="rounded-3xl shadow-lg hover:scale-110 hover:-rotate-2 transition-all duration-700 w-full h-auto"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -808,11 +813,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
             {[
               {
                 image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                  "/gym/blog1.png",
                 category: "Workouts",
                 title: "10 Essential Exercises for Building Core Strength",
                 excerpt:
@@ -821,10 +826,11 @@ export default function Home() {
                 date: "Nov 15, 2024",
                 readTime: "5 min read",
                 featured: true,
+                link: "/blog/10-essential-exercises-core-strength",
               },
               {
                 image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                  "/gym/nutrition.png",
                 category: "Nutrition",
                 title: "The Ultimate Guide to Pre-Workout Nutrition",
                 excerpt:
@@ -833,21 +839,11 @@ export default function Home() {
                 date: "Nov 12, 2024",
                 readTime: "7 min read",
                 featured: false,
-              },
-              {
-                image:
-                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                category: "Wellness",
-                title: "How to Stay Motivated on Your Fitness Journey",
-                excerpt:
-                  "Practical tips and strategies to maintain motivation and consistency in your fitness routine for long-term success.",
-                author: "Emma Davis",
-                date: "Nov 10, 2024",
-                readTime: "6 min read",
-                featured: false,
-              },
+                link: "/blog/ultimate-guide-pre-workout-nutrition",
+              }
             ].map((article, index) => (
-              <article
+              <Link
+                href={article.link}
                 key={index}
                 className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 overflow-hidden border border-gray-700/50 article-card cursor-pointer hover:scale-105 hover:-translate-y-4"
               >
@@ -913,7 +909,7 @@ export default function Home() {
 
                 {/* BLACK & WHITE THEME Corner Accent */}
                 <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </article>
+              </Link>
             ))}
           </div>
 
