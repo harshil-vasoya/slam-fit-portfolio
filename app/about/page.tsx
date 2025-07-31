@@ -559,13 +559,13 @@ export default function About() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center">
-              <button className="group relative bg-gradient-to-r from-gray-800 to-gray-900 text-white px-16 py-8 rounded-3xl font-bold text-2xl hover:shadow-lg hover:scale-110 hover:-translate-y-3 transition-all duration-500 animated-button overflow-hidden">
+              {/* <button className="group relative bg-gradient-to-r from-gray-800 to-gray-900 text-white px-16 py-8 rounded-3xl font-bold text-2xl hover:shadow-lg hover:scale-110 hover:-translate-y-3 transition-all duration-500 animated-button overflow-hidden">
                 <span className="relative z-10 flex items-center">Start Your Journey<ArrowRight className="ml-4" /></span>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute top-4 left-12 w-2 h-2 bg-white rounded-full animate-ping"></div>
                   <div className="absolute bottom-6 right-16 w-2 h-2 bg-white rounded-full animate-ping delay-100"></div>
                 </div>
-              </button>
+              </button> */}
 
               <Link
                 href="/contact"

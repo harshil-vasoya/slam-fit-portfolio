@@ -22,15 +22,15 @@ export default function Cardio() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                 <Link
+                 {/* <Link
                   href="/contact"
-                >
+                > */}
                  
-                <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group">
+                {/* <button className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-glow transition-all duration-300 flex items-center justify-center group">
                   Book Free Trial
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                </Link>
+                </button> */}
+                {/* </Link> */}
                 <Link
                   href="/contact"
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center"
@@ -141,10 +141,10 @@ export default function Cardio() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group">
+                {/* <button className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group">
                   Start Training Today
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
                 <Link
                   href="/contact"
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center"
@@ -244,10 +244,10 @@ export default function Cardio() {
             Join our cardio training program and improve your cardiovascular health and endurance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-gray-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group">
+           {/* <button className="bg-white text-gray-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center group">
               Start Free Trial
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button> */}
             <Link
               href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-600 transition-all duration-300 flex items-center justify-center"

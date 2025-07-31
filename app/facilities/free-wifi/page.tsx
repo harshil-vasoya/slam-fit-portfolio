@@ -296,9 +296,7 @@ export default function FreeWifi() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10">Connect Now</span>
               </button>
-              <Link href="/facilities" className="group border-2 border-white/30 backdrop-blur-sm text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-black transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 inline-block">
-                View All Facilities
-              </Link>
+             
             </div>
           </div>
         </div>
