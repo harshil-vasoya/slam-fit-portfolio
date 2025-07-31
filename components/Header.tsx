@@ -272,7 +272,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link href="/contact">
               <button className="hidden md:block bg-gradient-primary text-white px-6 py-2 rounded-full font-medium hover:shadow-glow transition-all duration-300 animated-button">
-                Franchise Enquiry
+                Own a Franchise 
               </button>
             </Link>
             <button
