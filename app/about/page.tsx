@@ -465,7 +465,7 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               {
-                number: "10,000+",
+                number: "1k+",
                 label: "Members Transformed",
                 gradient: "from-gray-800 to-gray-900",
                 icon: Users,
@@ -511,7 +511,7 @@ export default function About() {
                     </div>
 
                     <div
-                      className={`text-5xl lg:text-6xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-4 group-hover:animate-pulse stat-number`}
+                      className={`text-5xl lg:text-6xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-4 group-hover:animate-pulse stat-number `}
                     >
                   {stat.number}
                 </div>
