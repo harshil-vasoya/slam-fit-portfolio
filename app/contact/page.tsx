@@ -282,7 +282,6 @@ export default function Contact() {
                       1071, 24th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102
                       </a>
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">Near Kilpauk Medical College</p>
                   </div>
                 </div>
 
@@ -296,7 +295,7 @@ export default function Contact() {
                       <a href="https://wa.me/918748899333" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 8748899333</a>
                       
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">Available during business hours</p>
+                    {/* <p className="text-sm text-gray-400 mt-2">Available during business hours</p> */}
                   </div>
                 </div>
 
