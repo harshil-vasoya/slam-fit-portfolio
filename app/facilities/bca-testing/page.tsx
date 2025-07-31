@@ -134,16 +134,6 @@ export default function BCATesting() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 hero-buttons justify-center lg:justify-start">
-                <Link href="/contact" >
-                <button className="group relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all duration-500 flex items-center justify-center animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <span className="relative z-10">Book Test</span>
-                  <ArrowRight className="ml-3 group-hover:-translate-x-2 transition-transform duration-300 relative z-10" />
-                </button>
-                </Link>
-               
-              </div>
 
               <div className="flex items-center justify-center lg:justify-start space-x-8 lg:space-x-12 text-white hero-stats">
                 <div className="flex items-center space-x-3 group cursor-pointer">
@@ -230,10 +220,7 @@ export default function BCATesting() {
                 ))}
               </div>
 
-              <button className="group relative bg-gradient-to-r from-gray-500 to-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(107,114,128,0.5)] transition-all duration-500 animated-button hover:scale-110 hover:-translate-y-2 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="relative z-10">Book Test</span>
-              </button>
+          
             </div>
 
             <div className="relative">
