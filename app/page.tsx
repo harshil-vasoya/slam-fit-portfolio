@@ -1183,8 +1183,7 @@ export default function Home() {
                     </h4>
                     <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">
                       slamfitnessblr@gmail.com
-                      <br />
-                      sureshs@paulsons.in
+                      
                     </p>
                   </div>
                 </div>
